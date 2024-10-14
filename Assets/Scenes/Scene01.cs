@@ -62,13 +62,37 @@ public class Scene01 : MonoBehaviour
         evenPos = 2;
     }
 
+   IEnumerator EventTwo()
+{
+    nextButton.SetActive(false);  // Nonaktifkan tombol "Next"
+    textBox.SetActive(true);      // Tampilkan kotak teks
+    charName.GetComponent<TMPro.TMP_Text>().text = "Aria";  // Nama karakter yang berbicara adalah Edgar
+    textToSpeak = "Aku sudah mendengar tentang keadaan desa ini. Aku datang sesuai tugasku—untuk melindungi kalian. Apa yang harus kulakukan.";
+    textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;  // Tampilkan teks dialog Edgar
+    currentTexlength = textToSpeak.Length;  // Hitung panjang teks
+    TextCreator.runTextPrint = true;  // Mulai animasi teks
+    yield return new WaitForSeconds(0.05f);  // Jeda sejenak
+    yield return new WaitForSeconds(1);  // Jeda 1 detik
+    yield return new WaitUntil(() => textLength == currentTexlength);  // Tunggu sampai teks selesai ditampilkan
+    yield return new WaitForSeconds(0.5f);  // Jeda setengah detik
+    nextButton.SetActive(true);  // Aktifkan tombol "Next"
+    evenPos = 2;  // Atur status ke event kedua selesai
+}
+
+
+
     public void NextButton()
+{
+    if (evenPos == 1)
     {
-        if(evenPos == 1)
-        {
-            StartCoroutine(EventOne());
-        }
+        StartCoroutine(EventOne());
     }
+    else if (evenPos == 2)
+    {
+        StartCoroutine(EventTwo());
+    }
+}
+
 }
     
 
