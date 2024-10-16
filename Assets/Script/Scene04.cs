@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scene02 : MonoBehaviour
+public class Scene04 : MonoBehaviour
 {
     public GameObject charAria;
-    public GameObject charMaeva; // Karakter baru Maeva
+    public GameObject charMaeva;
+    public GameObject charKael;
+    public GameObject charElly;
+
     public GameObject textBox;
 
     [SerializeField] string textToSpeak;
@@ -37,7 +40,7 @@ public class Scene02 : MonoBehaviour
         charAria.SetActive(true);
         yield return new WaitForSeconds(1);
         mainTextObject.SetActive(true);
-        textToSpeak = "Aria bertemu dengan Maeva, seorang petani yang putus asa. Ladangnya dilanda kutukan yang membuat tanahnya gersang";
+        textToSpeak = "Aria melihat seorang anak kecil bernama Elly, duduk di sudut desa dengan air mata di pipinya";
         textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTexlength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
@@ -45,7 +48,7 @@ public class Scene02 : MonoBehaviour
         yield return new WaitForSeconds(1);
         yield return new WaitUntil(() => textLength == currentTexlength);
         yield return new WaitForSeconds(0.5f);
-        charMaeva.SetActive(true); // Menampilkan karakter Maeva
+        charElly.SetActive(true); // Menampilkan karakter Maeva
         yield return new WaitForSeconds(2);
         nextButton.SetActive(true);
         evenPos = 1;
@@ -55,8 +58,8 @@ public class Scene02 : MonoBehaviour
     {
         nextButton.SetActive(false);
         textBox.SetActive(true);
-        charName.GetComponent<TMPro.TMP_Text>().text = "Maeva";
-        textToSpeak = "Ladangku... semuanya sudah mati. Aku tak bisa menanam apa pun. Keluargaku bergantung pada hasil panen ini. Bisakah kau membantuku?";
+        charName.GetComponent<TMPro.TMP_Text>().text = "Aria";
+        textToSpeak = "Elly, ada apa? Mengapa kau menangis?";
         textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTexlength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
@@ -72,8 +75,8 @@ public class Scene02 : MonoBehaviour
     {
         nextButton.SetActive(false);
         textBox.SetActive(true);
-        charName.GetComponent<TMPro.TMP_Text>().text = "Aria";
-        textToSpeak = "Kutukan ini berasal dari sihir hitam Dorian. Aku bisa menghilangkannya, tapi butuh waktu dan energi. Apakah kau memiliki sesuatu yang bisa membantuku memulihkan kekuatanku setelahnya?";
+        charName.GetComponent<TMPro.TMP_Text>().text = "Elly";
+        textToSpeak = "Kakakku... Kakakku terkena kutukan Dorian. Dia tidak bisa bangun dari tempat tidur. Tolong, bisakah kau menyelamatkannya? Ibu sudah mencoba semuanya, tapi tak ada yang berhasil.";
         textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTexlength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
@@ -89,8 +92,8 @@ public class Scene02 : MonoBehaviour
     {
         nextButton.SetActive(false);
         textBox.SetActive(true);
-        charName.GetComponent<TMPro.TMP_Text>().text = "Maeva";
-        textToSpeak = "Tentu! Aku punya beberapa ramuan penyembuh yang kutanam sebelum kutukan ini datang. Itu yang tersisa... Aku akan memberikan semuanya padamu";
+        charName.GetComponent<TMPro.TMP_Text>().text = "Aria";
+        textToSpeak = "Aku akan mencoba yang terbaik, Elly. Di mana rumahmu? Aku akan segera pergi ke sana.";
         textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTexlength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
@@ -106,25 +109,8 @@ public class Scene02 : MonoBehaviour
     {
         nextButton.SetActive(false);
         textBox.SetActive(true);
-        charName.GetComponent<TMPro.TMP_Text>().text = "Aria";
-        textToSpeak = "Baik, aku akan melakukan yang terbaik";
-        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
-        currentTexlength = textToSpeak.Length;
-        TextCreator.runTextPrint = true;
-        yield return new WaitForSeconds(0.05f);
-        yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => textLength == currentTexlength);
-        yield return new WaitForSeconds(0.5f);
-        nextButton.SetActive(true);
-        evenPos = 5;
-    }
-
-    IEnumerator EventFive()
-    {
-        nextButton.SetActive(false);
-        textBox.SetActive(true);
-        charName.GetComponent<TMPro.TMP_Text>().text = "Maeva";
-        textToSpeak = "Portal itu sangat berbahaya, Aria. Hanya penyihir dengan kekuatan sepertimu yang bisa mendekatinya tanpa terluka.";
+        charName.GetComponent<TMPro.TMP_Text>().text = "Elly";
+        textToSpeak = "Terima kasih, Aria. Tolong selamatkan kakakku.";
         textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTexlength = textToSpeak.Length;
         TextCreator.runTextPrint = true;
@@ -157,12 +143,8 @@ public class Scene02 : MonoBehaviour
         {
             StartCoroutine(EventFour());
         }
-        else if (evenPos == 5)
-        {
-            StartCoroutine(EventFive());
-        }
-    }
 
+    }
     public void MultiChoice(bool isAccepted)
     {
         if (isAccepted)
