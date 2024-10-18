@@ -8,6 +8,7 @@ public class Scene03 : MonoBehaviour
     public GameObject charAria;
     public GameObject charMaeva; // Karakter baru Maeva
     public GameObject charKael; // Karakter baru Maeva
+    public GameObject fadeOut;
 
     public GameObject textBox;
 
@@ -34,6 +35,8 @@ public class Scene03 : MonoBehaviour
 
     IEnumerator Evenstarter()
     {
+         yield return new WaitForSeconds(1);     
+        fadeOut.SetActive(true);
         // Event 1: Aria tiba di tempat baru
         yield return new WaitForSeconds(1);
         charAria.SetActive(true);

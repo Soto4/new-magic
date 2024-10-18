@@ -8,6 +8,7 @@ public class Scene07 : MonoBehaviour
     public GameObject charAria;
     public GameObject charDorian;
 
+    public GameObject fadeOut;
 
     public GameObject textBox;
 
@@ -33,6 +34,8 @@ public class Scene07 : MonoBehaviour
 
     IEnumerator Evenstarter()
     {
+         yield return new WaitForSeconds(1);     
+        fadeOut.SetActive(true);
         // Event 1
         yield return new WaitForSeconds(1);
         charAria.SetActive(true);

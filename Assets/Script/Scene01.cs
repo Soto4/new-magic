@@ -8,6 +8,7 @@ public class Scene01 : MonoBehaviour
     public GameObject charAria;
     public GameObject charEdgar;
     public GameObject textBox;
+    public GameObject fadeOut;
 
     [SerializeField] string textToSpeak;
     [SerializeField] int currentTexlength;
@@ -31,6 +32,8 @@ public class Scene01 : MonoBehaviour
     IEnumerator Evenstarter()
     {
         // Event 1
+        yield return new WaitForSeconds(1);     
+        fadeOut.SetActive(true);
         yield return new WaitForSeconds(1);
         charAria.SetActive(true);
         yield return new WaitForSeconds(1);

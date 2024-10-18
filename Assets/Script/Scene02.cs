@@ -8,6 +8,8 @@ public class Scene02 : MonoBehaviour
     public GameObject charAria;
     public GameObject charMaeva; // Karakter baru Maeva
     public GameObject textBox;
+        public GameObject fadeOut;
+
 
     [SerializeField] string textToSpeak;
     [SerializeField] int currentTexlength;
@@ -32,8 +34,9 @@ public class Scene02 : MonoBehaviour
 
     IEnumerator Evenstarter()
     {
+         yield return new WaitForSeconds(1);     
+        fadeOut.SetActive(true);
         // Event 1: Aria tiba di tempat baru
-        yield return new WaitForSeconds(1);
         charAria.SetActive(true);
         yield return new WaitForSeconds(1);
         mainTextObject.SetActive(true);
