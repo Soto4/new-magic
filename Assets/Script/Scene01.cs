@@ -1,7 +1,6 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class Scene01 : MonoBehaviour
 {
@@ -11,157 +10,136 @@ public class Scene01 : MonoBehaviour
     public GameObject fadeOut;
 
     [SerializeField] string textToSpeak;
-    [SerializeField] int currentTexlength;
+    [SerializeField] int currentTextLength;
     [SerializeField] int textLength;
     [SerializeField] GameObject mainTextObject;
     [SerializeField] GameObject nextButton;
-    [SerializeField] int evenPos = 0;
     [SerializeField] GameObject charName;
+
+    private int eventPos = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Evenstarter());
+        StartCoroutine(EventStarter());
     }
 
     void Update()
     {
         textLength = TextCreator.charCount;
+
+        // Deteksi jika ada input keyboard untuk melanjutkan dialog
+        if (Input.anyKeyDown)
+        {
+            NextButton();
+        }
     }
 
-    IEnumerator Evenstarter()
+    IEnumerator EventStarter()
     {
         // Event 1
-        yield return new WaitForSeconds(1);     
+        yield return new WaitForSeconds(1);
         fadeOut.SetActive(true);
         yield return new WaitForSeconds(1);
         charAria.SetActive(true);
         yield return new WaitForSeconds(1);
         mainTextObject.SetActive(true);
-        textToSpeak = "Aria tiba di desa Elmwood. Disambut kepala desa, Edgar.";
-        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
-        currentTexlength = textToSpeak.Length;
-        TextCreator.runTextPrint = true;
-        yield return new WaitForSeconds(0.1f);
-        yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => textLength == currentTexlength);
-        yield return new WaitForSeconds(0.5f);
+
+        StartDialog("Aria tiba di desa Elmwood. Disambut kepala desa, Edgar.", "Aria");
+        yield return WaitForTextToFinish();
+        
         charEdgar.SetActive(true);
         yield return new WaitForSeconds(2);
         nextButton.SetActive(true);
-        evenPos = 1;
+        eventPos = 1;
     }
 
+    // Memulai dialog baru
+    void StartDialog(string dialogText, string speakerName)
+    {
+        textBox.SetActive(true);
+        charName.GetComponent<TMPro.TMP_Text>().text = speakerName;
+        textToSpeak = dialogText;
+        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
+        currentTextLength = textToSpeak.Length;
+        TextCreator.runTextPrint = true;
+    }
+
+    // Menunggu sampai teks selesai ditampilkan
+    IEnumerator WaitForTextToFinish()
+    {
+        yield return new WaitForSeconds(0.1f);
+        yield return new WaitUntil(() => textLength == currentTextLength);
+        yield return new WaitForSeconds(0.5f);
+    }
+
+    // Masing-masing event cerita
     IEnumerator EventOne()
     {
+        StartDialog("Selamat datang, Penyihir Aria. Kami sangat berterima kasih atas kedatanganmu. Desa ini... sudah terlalu lama berada di bawah bayang-bayang Dorian.", "Edgar");
+        yield return WaitForTextToFinish();
         nextButton.SetActive(true);
-        textBox.SetActive(true);
-        charName.GetComponent<TMPro.TMP_Text>().text = "Edgar";
-        textToSpeak = "Selamat datang, Penyihir Aria. Kami sangat berterima kasih atas kedatanganmu. Desa ini... sudah terlalu lama berada di bawah bayang-bayang Dorian.";
-        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
-        currentTexlength = textToSpeak.Length;
-        TextCreator.runTextPrint = true;
-        yield return new WaitForSeconds(0.05f);
-        yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => textLength == currentTexlength);
-        yield return new WaitForSeconds(0.5f);
-        nextButton.SetActive(true);
-        evenPos = 2;
+        eventPos = 2;
     }
 
     IEnumerator EventTwo()
     {
+        StartDialog("Aku sudah mendengar tentang keadaan desa ini. Aku datang sesuai tugasku untuk melindungi kalian. Apa yang harus kulakukan?", "Aria");
+        yield return WaitForTextToFinish();
         nextButton.SetActive(true);
-        textBox.SetActive(true);
-        charName.GetComponent<TMPro.TMP_Text>().text = "Aria";
-        textToSpeak = "Aku sudah mendengar tentang keadaan desa ini. Aku datang sesuai tugasku untuk melindungi kalian. Apa yang harus kulakukan?";
-        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
-        currentTexlength = textToSpeak.Length;
-        TextCreator.runTextPrint = true;
-        yield return new WaitForSeconds(0.05f);
-        yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => textLength == currentTexlength);
-        yield return new WaitForSeconds(0.5f);
-        nextButton.SetActive(true);
-        evenPos = 3;
+        eventPos = 3;
     }
 
     IEnumerator EventThree()
     {
+        StartDialog("Warga kami ketakutan. Dorian telah mengutuk sebagian besar dari kami. Terdapat banyak permintaan bantuan... Jika kau bisa menyelesaikan tugas mereka, mungkin kita bisa memperkuat sihir pelindung desa", "Edgar");
+        yield return WaitForTextToFinish();
         nextButton.SetActive(true);
-        textBox.SetActive(true);
-        charName.GetComponent<TMPro.TMP_Text>().text = "Edgar";
-        textToSpeak = "Warga kami ketakutan. Dorian telah mengutuk sebagian besar dari kami. Terdapat banyak permintaan bantuan... Jika kau bisa menyelesaikan tugas mereka, mungkin kita bisa memperkuat sihir pelindung desa";
-        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
-        currentTexlength = textToSpeak.Length;
-        TextCreator.runTextPrint = true;
-        yield return new WaitForSeconds(0.05f);
-        yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => textLength == currentTexlength);
-        yield return new WaitForSeconds(0.5f);
-        nextButton.SetActive(true);
-        evenPos = 4;
+        eventPos = 4;
     }
 
     IEnumerator EventFour()
     {
+        StartDialog("Aku akan membantu sebanyak yang aku bisa. Apa kau bisa tunjukkan warga yang membutuhkan pertolongan?", "Aria");
+        yield return WaitForTextToFinish();
         nextButton.SetActive(true);
-        textBox.SetActive(true);
-        charName.GetComponent<TMPro.TMP_Text>().text = "Aria";
-        textToSpeak = "Aku akan membantu sebanyak yang aku bisa. Apa kau bisa tunjukkan warga yang membutuhkan pertolongan?";
-        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
-        currentTexlength = textToSpeak.Length;
-        TextCreator.runTextPrint = true;
-        yield return new WaitForSeconds(0.05f);
-        yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => textLength == currentTexlength);
-        yield return new WaitForSeconds(0.5f);
-        nextButton.SetActive(true);
-        evenPos = 5;
+        eventPos = 5;
     }
 
     IEnumerator EventFive()
     {
+        StartDialog("Ya... Tapi ingat, waktu kita terbatas. Dorian semakin mendekat. Jika kau tidak bisa membantu mereka, aku khawatir semuanya akan berakhir buruk", "Edgar");
+        yield return WaitForTextToFinish();
         nextButton.SetActive(true);
-        textBox.SetActive(true);
-        charName.GetComponent<TMPro.TMP_Text>().text = "Edgar";
-        textToSpeak = "Ya... Tapi ingat, waktu kita terbatas. Dorian semakin mendekat. Jika kau tidak bisa membantu mereka, aku khawatir semuanya akan berakhir buruk";
-        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
-        currentTexlength = textToSpeak.Length;
-        TextCreator.runTextPrint = true;
-        yield return new WaitForSeconds(0.05f);
-        yield return new WaitForSeconds(1);
-        yield return new WaitUntil(() => textLength == currentTexlength);
-        yield return new WaitForSeconds(0.5f);
-        nextButton.SetActive(true);
-        evenPos = 6; // End or continue to further events
-
-
+        eventPos = 6;
     }
 
+    // Fungsi untuk tombol Next atau input keyboard
     public void NextButton()
     {
-        if (evenPos == 1)
+        nextButton.SetActive(false); // Matikan tombol agar tidak bisa ditekan berulang kali
+
+        if (eventPos == 1)
         {
             StartCoroutine(EventOne());
         }
-        else if (evenPos == 2)
+        else if (eventPos == 2)
         {
             StartCoroutine(EventTwo());
         }
-        else if (evenPos == 3)
+        else if (eventPos == 3)
         {
             StartCoroutine(EventThree());
         }
-        else if (evenPos == 4)
+        else if (eventPos == 4)
         {
             StartCoroutine(EventFour());
         }
-        else if (evenPos == 5)
+        else if (eventPos == 5)
         {
             StartCoroutine(EventFive());
         }
-        else if (evenPos == 6)
+        else if (eventPos == 6)
         {
             SceneManager.LoadScene("Scene02");
         }
