@@ -30,6 +30,14 @@ public class Scene02 : MonoBehaviour
     void Update()
     {
         textLength = TextCreator.charCount;
+        // Deteksi jika ada input keyboard untuk melanjutkan dialog
+        if (Input.anyKeyDown)
+        {
+            NextButton();
+
+        }
+        Debug.Log(buttonAcc.activeSelf); // Cek apakah button aktif
+
     }
 
     IEnumerator Evenstarter()

@@ -31,6 +31,12 @@ public class Scene03 : MonoBehaviour
     void Update()
     {
         textLength = TextCreator.charCount;
+
+          if (Input.anyKeyDown)
+        {
+            NextButton();
+
+        }
     }
 
     IEnumerator Evenstarter()
