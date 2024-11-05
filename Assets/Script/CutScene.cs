@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class CutScene : MonoBehaviour
 {
+    public GameObject fadeOut;
+    public GameObject fadeClose;
+    public GameObject nextButton;
     public GameObject pict1;
     public GameObject pict2;
     public GameObject pict3;
@@ -20,10 +25,21 @@ public class CutScene : MonoBehaviour
 
         StartCoroutine(Evenstarter());
     }
+     void Update()
+    {
+
+        // Deteksi jika ada input keyboard untuk melanjutkan dialog
+        if (Input.anyKeyDown)
+        {
+            NextButton();
+        }
+    }
 
     IEnumerator Evenstarter()
     {
+
         // Event 1
+        fadeOut.SetActive(true);
         yield return new WaitForSeconds(1);
         pict1.SetActive(true);
         yield return new WaitForSeconds(5);
@@ -43,5 +59,11 @@ public class CutScene : MonoBehaviour
         yield return new WaitForSeconds(5);
         pict9.SetActive(true);
         yield return new WaitForSeconds(5);
+        fadeClose.SetActive(true);
+        nextButton.SetActive(true);
 }
+    public void NextButton()
+    {
+          SceneManager.LoadScene("Scene01");
+    }
 }

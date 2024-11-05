@@ -1201,7 +1201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: c077da14389e2034e83ef4328b622ffb, type: 3}
+  m_Texture: {fileID: 2800000, guid: 15d56133970e33f4c8b84f6c49bad991, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1846,7 +1846,7 @@ GameObject:
   - component: {fileID: 2055285536}
   - component: {fileID: 2055285535}
   m_Layer: 0
-  m_Name: SceneCotrol
+  m_Name: SceneControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
