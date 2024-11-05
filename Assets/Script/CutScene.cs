@@ -58,7 +58,7 @@ public class CutScene : MonoBehaviour
         pict8.SetActive(true);
         yield return new WaitForSeconds(5);
         pict9.SetActive(true);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(7);
         fadeClose.SetActive(true);
         nextButton.SetActive(true);
 }
