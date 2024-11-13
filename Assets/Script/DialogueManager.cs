@@ -2,60 +2,70 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Animations;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public static DialogueManager instance; // Menggunakan 'instance' yang benar
- 
+    public static DialogueManager instance;
+
+    public GameObject ariaImage; // Gambar karakter Aria
+    public GameObject maevaImage; // Gambar karakter Maeva
     public TextMeshProUGUI characterName;
     public TextMeshProUGUI dialogueArea;
-    private Queue<DialogueLine> lines = new Queue<DialogueLine>(); // Inisialisasi Queue
+    private Queue<DialogueLine> lines = new Queue<DialogueLine>();
     public bool isDialogueActive = false;
-    public float typingSpeed = 0.2f;
+    public float typingSpeed = 0.05f;
+    public float characterDisplayDelay = 0.5f; // Delay sebelum dialog muncul
 
     private void Start()
-    {
-        if (instance == null)
-            instance = this;
-        else if (instance != this)
-            Destroy(gameObject); // Mencegah duplikasi instance
+{
+    if (instance == null)
+        instance = this;
+    else if (instance != this)
+        Destroy(gameObject);
 
-        lines = new Queue<DialogueLine>(); // Inisialisasi Queue di Start
-    }
+    lines = new Queue<DialogueLine>();
 
-    public void StartDialogue(Dialogue dialogue)
-    {
-        isDialogueActive = true;
-        lines.Clear();
-
-        foreach (DialogueLine dialogueLine in dialogue.dialoguelines)
-        {
-            lines.Enqueue(dialogueLine);
-        }
-
-        DisplayNextDialogueLine();
-    }
+    // Debug untuk memastikan StartDialogue dipanggil
+    Debug.Log("Mulai Dialog...");
+    DisplayNextDialogueLine(someDialogue);  // Gantilah dengan dialog yang sudah ada
+}
 
     public void DisplayNextDialogueLine()
+{
+    if (lines.Count == 0)
     {
-        if (lines.Count == 0)
-        {
-            EndDialogue();
-            return;
-        }
-
-        DialogueLine currentLine = lines.Dequeue();
-        characterName.text = currentLine.character.name;
-
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(currentLine));
+        EndDialogue();
+        return;
     }
 
-    IEnumerator TypeSentence(DialogueLine dialogueLine)
+    DialogueLine currentLine = lines.Dequeue();
+
+    characterName.text = currentLine.character.name;
+
+    if (currentLine.character.name == "Aria")
     {
-        dialogueArea.text = "";
+        ariaImage.SetActive(true);
+        maevaImage.SetActive(false);
+        Debug.Log("Aria tampil");
+    }
+    else if (currentLine.character.name == "Maeva")
+    {
+        ariaImage.SetActive(false);
+        maevaImage.SetActive(true);
+        Debug.Log("Maeva tampil");
+    }
+
+    StopAllCoroutines();
+    StartCoroutine(DisplayDialogueWithDelay(currentLine));
+}
+
+    IEnumerator DisplayDialogueWithDelay(DialogueLine dialogueLine)
+    {
+        dialogueArea.text = "";  // Kosongkan area dialog sementara
+        yield return new WaitForSeconds(characterDisplayDelay);
+
+        // Tampilkan dialog secara bertahap
         foreach (char letter in dialogueLine.line.ToCharArray())
         {
             dialogueArea.text += letter;
@@ -66,5 +76,8 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         isDialogueActive = false;
+        // Sembunyikan gambar karakter setelah dialog berakhir
+        ariaImage.SetActive(false);
+        maevaImage.SetActive(false);
     }
 }

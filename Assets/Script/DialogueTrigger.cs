@@ -35,11 +35,12 @@ public class DialogueTrigger : MonoBehaviour
        {
         DialogueManager.instance.StartDialogue(dialogue);
        }
-    private void OnTriggerEnter2D(Collider Collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (Collision.tag == "Aria")
+        // Contoh: cek apakah objek yang masuk memiliki tag tertentu
+        if (other.CompareTag("Maeva"))
         {
-            TriggerDialogue();
+            Debug.Log("Player memasuki area trigger!");
         }
     }
 }
