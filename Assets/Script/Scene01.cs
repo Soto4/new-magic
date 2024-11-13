@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using TMPro;
 
 public class Scene01 : MonoBehaviour
 {
@@ -17,27 +18,41 @@ public class Scene01 : MonoBehaviour
     [SerializeField] GameObject charName;
 
     private int eventPos = 0;
+    private bool isTyping = false;
+    private bool isTextComplete = false;
+    private Coroutine typeCoroutine;
+    private TMP_Text dialogueText;
 
-    // Start is called before the first frame update
     void Start()
     {
+        dialogueText = textBox.GetComponent<TMP_Text>();
         StartCoroutine(EventStarter());
     }
 
     void Update()
     {
-        textLength = TextCreator.charCount;
-
-        // Deteksi jika ada input keyboard untuk melanjutkan dialog
+        // Jika ada input saat text sedang diketik
         if (Input.anyKeyDown)
         {
-            NextButton();
+            if (isTyping)
+            {
+                // Skip animasi ketik dan tampilkan semua teks
+                StopCoroutine(typeCoroutine);
+                dialogueText.text = textToSpeak;
+                isTyping = false;
+                isTextComplete = true;
+                nextButton.SetActive(true);
+            }
+            else if (isTextComplete)
+            {
+                // Lanjut ke dialog berikutnya
+                NextButton();
+            }
         }
     }
 
     IEnumerator EventStarter()
     {
-        // Event 1
         yield return new WaitForSeconds(1);
         fadeOut.SetActive(true);
         yield return new WaitForSeconds(1);
@@ -47,101 +62,123 @@ public class Scene01 : MonoBehaviour
 
         StartDialog("Aria tiba di desa Elmwood. Disambut kepala desa, Edgar.", "Aria");
         yield return WaitForTextToFinish();
-        
+
         charEdgar.SetActive(true);
         yield return new WaitForSeconds(2);
         nextButton.SetActive(true);
         eventPos = 1;
     }
 
-    // Memulai dialog baru
     void StartDialog(string dialogText, string speakerName)
     {
+        isTextComplete = false;
         textBox.SetActive(true);
-        charName.GetComponent<TMPro.TMP_Text>().text = speakerName;
+        charName.GetComponent<TMP_Text>().text = speakerName;
         textToSpeak = dialogText;
-        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
         currentTextLength = textToSpeak.Length;
-        TextCreator.runTextPrint = true;
+
+        // Mulai menampilkan teks kata per kata
+        typeCoroutine = StartCoroutine(TypeWordByWord(dialogText));
     }
 
-    // Menunggu sampai teks selesai ditampilkan
+    IEnumerator TypeWordByWord(string text)
+    {
+        isTyping = true;
+        dialogueText.text = "";
+        string[] words = text.Split(' ');
+
+        for (int i = 0; i < words.Length; i++)
+        {
+            // Tambahkan spasi setelah kata kecuali untuk kata terakhir
+            string wordToType = words[i] + (i < words.Length - 1 ? " " : "");
+
+            foreach (char letter in wordToType)
+            {
+                dialogueText.text += letter;
+                yield return new WaitForSeconds(0.03f); // Kecepatan typing
+            }
+
+            // Jeda singkat setelah setiap kata
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        isTyping = false;
+        isTextComplete = true;
+        nextButton.SetActive(true);
+    }
+
     IEnumerator WaitForTextToFinish()
     {
-        yield return new WaitForSeconds(0.1f);
-        yield return new WaitUntil(() => textLength == currentTextLength);
+        yield return new WaitUntil(() => isTextComplete);
         yield return new WaitForSeconds(0.5f);
     }
 
-    // Masing-masing event cerita
     IEnumerator EventOne()
     {
+        nextButton.SetActive(false);
         StartDialog("Selamat datang, Penyihir Aria. Kami sangat berterima kasih atas kedatanganmu. Desa ini... sudah terlalu lama berada di bawah bayang-bayang Dorian.", "Edgar");
         yield return WaitForTextToFinish();
-        nextButton.SetActive(true);
         eventPos = 2;
     }
 
     IEnumerator EventTwo()
     {
+        nextButton.SetActive(false);
         StartDialog("Aku sudah mendengar tentang keadaan desa ini. Aku datang sesuai tugasku untuk melindungi kalian. Apa yang harus kulakukan?", "Aria");
         yield return WaitForTextToFinish();
-        nextButton.SetActive(true);
         eventPos = 3;
     }
 
     IEnumerator EventThree()
     {
+        nextButton.SetActive(false);
         StartDialog("Warga kami ketakutan. Dorian telah mengutuk sebagian besar dari kami. Terdapat banyak permintaan bantuan... Jika kau bisa menyelesaikan tugas mereka, mungkin kita bisa memperkuat sihir pelindung desa", "Edgar");
         yield return WaitForTextToFinish();
-        nextButton.SetActive(true);
         eventPos = 4;
     }
 
     IEnumerator EventFour()
     {
+        nextButton.SetActive(false);
         StartDialog("Aku akan membantu sebanyak yang aku bisa. Apa kau bisa tunjukkan warga yang membutuhkan pertolongan?", "Aria");
         yield return WaitForTextToFinish();
-        nextButton.SetActive(true);
         eventPos = 5;
     }
 
     IEnumerator EventFive()
     {
+        nextButton.SetActive(false);
         StartDialog("Ya... Tapi ingat, waktu kita terbatas. Dorian semakin mendekat. Jika kau tidak bisa membantu mereka, aku khawatir semuanya akan berakhir buruk", "Edgar");
         yield return WaitForTextToFinish();
-        nextButton.SetActive(true);
         eventPos = 6;
     }
 
-    // Fungsi untuk tombol Next atau input keyboard
     public void NextButton()
     {
-        nextButton.SetActive(false); // Matikan tombol agar tidak bisa ditekan berulang kali
+        if (isTyping || !isTextComplete) return;
 
-        if (eventPos == 1)
+        nextButton.SetActive(false);
+
+        switch (eventPos)
         {
-            StartCoroutine(EventOne());
-        }
-        else if (eventPos == 2)
-        {
-            StartCoroutine(EventTwo());
-        }
-        else if (eventPos == 3)
-        {
-            StartCoroutine(EventThree());
-        }
-        else if (eventPos == 4)
-        {
-            StartCoroutine(EventFour());
-        }
-        else if (eventPos == 5)
-        {
-            StartCoroutine(EventFive());
-        }
-        else if (eventPos == 6)
-        {
-            SceneManager.LoadScene("Scene02");
+            case 1:
+                StartCoroutine(EventOne());
+                break;
+            case 2:
+                StartCoroutine(EventTwo());
+                break;
+            case 3:
+                StartCoroutine(EventThree());
+                break;
+            case 4:
+                StartCoroutine(EventFour());
+                break;
+            case 5:
+                StartCoroutine(EventFive());
+                break;
+            case 6:
+                SceneManager.LoadScene("Scene02");
+                break;
         }
     }
 }
