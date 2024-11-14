@@ -671,6 +671,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d24913fede1f143a5c5e9fe21bea40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgImage: {fileID: 21300000, guid: f40eb1ef32c359d42bf3a779f28614a2, type: 3}
+  puzzles: []
+  gamePuzzles: []
   btns: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
