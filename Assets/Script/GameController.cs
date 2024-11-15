@@ -34,15 +34,42 @@ public class GameController : MonoBehaviour
         gameGuesses = gamePuzzles.Count / 2;
     }
 
-    void GetButtons()
+  void GetButtons()
+{
+    GameObject[] objects = GameObject.FindGameObjectsWithTag("PuzzleButton");
+
+    // Load Animator Controller dari folder Resources
+    RuntimeAnimatorController animatorController = Resources.Load<RuntimeAnimatorController>("CardFlipController");
+
+    for (int i = 0; i < objects.Length; i++)
     {
-        GameObject[] objects = GameObject.FindGameObjectsWithTag("PuzzleButton");
-        for (int i = 0; i < objects.Length; i++)
+        Button button = objects[i].GetComponent<Button>();
+        btns.Add(button);
+        button.image.sprite = bgImage;
+
+        // Tambahkan komponen Animator jika belum ada
+        Animator animator = objects[i].GetComponent<Animator>();
+        if (animator == null)
         {
-            btns.Add(objects[i].GetComponent<Button>());
-            btns[i].image.sprite = bgImage;
+            animator = objects[i].AddComponent<Animator>();
+        }
+
+        // Tetapkan Animator Controller
+        animator.runtimeAnimatorController = animatorController;
+
+        // Debugging: Pastikan Animator Controller berhasil ditambahkan
+        if (animator.runtimeAnimatorController == null)
+        {
+            Debug.LogError($"Animator Controller tidak ditemukan untuk tombol: {objects[i].name}");
+        }
+        else
+        {
+            Debug.Log($"Animator Controller berhasil ditambahkan ke tombol: {objects[i].name}");
         }
     }
+}
+
+
     void AddGamePuzzle()
     {
         int looper = btns.Count;
@@ -65,26 +92,35 @@ public class GameController : MonoBehaviour
             btn.onClick.AddListener(() => PickAPuzzle());
         }
     }
-    public void PickAPuzzle()
+   public void PickAPuzzle()
+{
+    string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
+    GameObject selectedButton = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
+
+    Animator animator = selectedButton.GetComponent<Animator>();
+    if (!firstGuess)
     {
-        string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
-        if (!firstGuess)
-        {
-            firstGuess = true;
-            firstGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
-            firstGuesspuzzle = gamePuzzles[firstGuessIndex].name;
-            btns[firstGuessIndex].image.sprite = gamePuzzles[firstGuessIndex];
-        }
-        else if (!secondGuess)
-        {
-            secondGuess = true;
-            secondGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
-            secondGuessPuzzle = gamePuzzles[secondGuessIndex].name;
-            btns[secondGuessIndex].image.sprite = gamePuzzles[secondGuessIndex];
-            countGuesses++;
-            StartCoroutine(CheckIfThePuzzlesMatch());
-        }
+        firstGuess = true;
+        firstGuessIndex = int.Parse(name);
+        firstGuesspuzzle = gamePuzzles[firstGuessIndex].name;
+
+        // Set animasi flip
+        animator.SetBool("IsFlipped", true);
     }
+    else if (!secondGuess)
+    {
+        secondGuess = true;
+        secondGuessIndex = int.Parse(name);
+        secondGuessPuzzle = gamePuzzles[secondGuessIndex].name;
+
+        // Set animasi flip
+        animator.SetBool("IsFlipped", true);
+
+        countGuesses++;
+        StartCoroutine(CheckIfThePuzzlesMatch());
+    }
+}
+
     IEnumerator CheckIfThePuzzlesMatch()
     {
         yield return new WaitForSeconds(1f);
