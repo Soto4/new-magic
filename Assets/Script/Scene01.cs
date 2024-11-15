@@ -7,6 +7,7 @@ public class Scene01 : MonoBehaviour
 {
     public GameObject charAria;
     public GameObject charEdgar;
+    public GameObject charEldran;
     public GameObject textBox;
     public GameObject fadeOut;
 
@@ -60,11 +61,13 @@ public class Scene01 : MonoBehaviour
         yield return new WaitForSeconds(1);
         mainTextObject.SetActive(true);
 
-        StartDialog("Aria tiba di desa Elmwood. Disambut kepala desa, Edgar.", "Aria");
+        StartDialog("Huwaah lelah sekali perjalanan kali ini, sepertinya aku harus menetap beberapa hari di desa terdekat.", "Aria");
         yield return WaitForTextToFinish();
 
         charEdgar.SetActive(true);
         yield return new WaitForSeconds(2);
+        charEldran.SetActive(true);
+        yield return new WaitForSeconds(1);
         nextButton.SetActive(true);
         eventPos = 1;
     }
@@ -116,7 +119,7 @@ public class Scene01 : MonoBehaviour
     IEnumerator EventOne()
     {
         nextButton.SetActive(false);
-        StartDialog("Selamat datang, Penyihir Aria. Kami sangat berterima kasih atas kedatanganmu. Desa ini... sudah terlalu lama berada di bawah bayang-bayang Dorian.", "Edgar");
+        StartDialog("Losiee…..", "Edgar");
         yield return WaitForTextToFinish();
         eventPos = 2;
     }
