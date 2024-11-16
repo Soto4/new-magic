@@ -18,12 +18,16 @@ public class GameController : MonoBehaviour
     private int gameGuesses;
     private int firstGuessIndex, secondGuessIndex;
     private string firstGuesspuzzle, secondGuessPuzzle;
+    [SerializeField] private GameObject gameOverPopup; // Panel Popup Game Over
+
+
+    [SerializeField]
+    private int maxFlips = 6; // Batas maksimal flip percobaan
 
     void Awake()
     {
         puzzles = Resources.LoadAll<Sprite>("Sprites");
     }
-
 
     void Start()
     {
@@ -34,41 +38,15 @@ public class GameController : MonoBehaviour
         gameGuesses = gamePuzzles.Count / 2;
     }
 
-  void GetButtons()
-{
-    GameObject[] objects = GameObject.FindGameObjectsWithTag("PuzzleButton");
-
-    // Load Animator Controller dari folder Resources
-    RuntimeAnimatorController animatorController = Resources.Load<RuntimeAnimatorController>("CardFlipController");
-
-    for (int i = 0; i < objects.Length; i++)
+    void GetButtons()
     {
-        Button button = objects[i].GetComponent<Button>();
-        btns.Add(button);
-        button.image.sprite = bgImage;
-
-        // Tambahkan komponen Animator jika belum ada
-        Animator animator = objects[i].GetComponent<Animator>();
-        if (animator == null)
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("PuzzleButton");
+        for (int i = 0; i < objects.Length; i++)
         {
-            animator = objects[i].AddComponent<Animator>();
-        }
-
-        // Tetapkan Animator Controller
-        animator.runtimeAnimatorController = animatorController;
-
-        // Debugging: Pastikan Animator Controller berhasil ditambahkan
-        if (animator.runtimeAnimatorController == null)
-        {
-            Debug.LogError($"Animator Controller tidak ditemukan untuk tombol: {objects[i].name}");
-        }
-        else
-        {
-            Debug.Log($"Animator Controller berhasil ditambahkan ke tombol: {objects[i].name}");
+            btns.Add(objects[i].GetComponent<Button>());
+            btns[i].image.sprite = bgImage;
         }
     }
-}
-
 
     void AddGamePuzzle()
     {
@@ -77,7 +55,7 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < looper; i++)
         {
-            if(index == looper/2)
+            if (index == looper / 2)
             {
                 index = 0;
             }
@@ -85,6 +63,7 @@ public class GameController : MonoBehaviour
             index++;
         }
     }
+
     void AddListener()
     {
         foreach (Button btn in btns)
@@ -92,40 +71,49 @@ public class GameController : MonoBehaviour
             btn.onClick.AddListener(() => PickAPuzzle());
         }
     }
-   public void PickAPuzzle()
-{
-    string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
-    GameObject selectedButton = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
 
-    Animator animator = selectedButton.GetComponent<Animator>();
+    public void PickAPuzzle()
+{
+    if (countGuesses >= maxFlips)
+    {
+        GameOver();
+        return;
+    }
+
+    string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
     if (!firstGuess)
     {
         firstGuess = true;
-        firstGuessIndex = int.Parse(name);
+        firstGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
         firstGuesspuzzle = gamePuzzles[firstGuessIndex].name;
-
-        // Set animasi flip
-        animator.SetBool("IsFlipped", true);
+        btns[firstGuessIndex].image.sprite = gamePuzzles[firstGuessIndex];
     }
     else if (!secondGuess)
     {
         secondGuess = true;
-        secondGuessIndex = int.Parse(name);
+        secondGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
         secondGuessPuzzle = gamePuzzles[secondGuessIndex].name;
-
-        // Set animasi flip
-        animator.SetBool("IsFlipped", true);
-
+        btns[secondGuessIndex].image.sprite = gamePuzzles[secondGuessIndex];
         countGuesses++;
         StartCoroutine(CheckIfThePuzzlesMatch());
     }
 }
+private void GameOver()
+{
+    foreach (Button btn in btns)
+    {
+        btn.interactable = false; // Nonaktifkan semua tombol
+    }
+    gameOverPopup.SetActive(true); // Tampilkan popup
+    Debug.Log("Game Over! You exceeded the maximum number of flips.");
+}
+
 
     IEnumerator CheckIfThePuzzlesMatch()
     {
         yield return new WaitForSeconds(1f);
-            if (firstGuesspuzzle == secondGuessPuzzle)
-            {
+        if (firstGuesspuzzle == secondGuessPuzzle)
+        {
             yield return new WaitForSeconds(.5f);
             btns[firstGuessIndex].interactable = false;
             btns[secondGuessIndex].interactable = false;
@@ -133,28 +121,36 @@ public class GameController : MonoBehaviour
             btns[firstGuessIndex].image.color = new Color(0, 0, 0, 0);
             btns[secondGuessIndex].image.color = new Color(0, 0, 0, 0);
             CheckIfTheGameIsFinish();
-            } else
-            {
+        }
+        else
+        {
             btns[firstGuessIndex].image.sprite = bgImage;
             btns[secondGuessIndex].image.sprite = bgImage;
-            }
-            yield return new WaitForSeconds(.5f);
+        }
+        yield return new WaitForSeconds(.5f);
         firstGuess = secondGuess = false;
-
     }
+
     void CheckIfTheGameIsFinish()
     {
         countCorrectGuesses++;
         if (countCorrectGuesses == gameGuesses)
         {
-            Debug.Log("You Won!");
-            Debug.Log("It Took You have " + countGuesses + " many Guesses to finish the game");
+            if (countGuesses <= maxFlips)
+            {
+                Debug.Log("You Won!");
+                Debug.Log("It Took You " + countGuesses + " guesses to finish the game!");
+            }
+            else
+            {
+                Debug.Log("Game Over! You exceeded the maximum number of flips.");
+            }
         }
     }
 
     void Shuffle(List<Sprite> list)
     {
-        for (int i = 0;  i < list.Count; i++)
+        for (int i = 0; i < list.Count; i++)
         {
             Sprite temp = list[i];
             int randomIndex = UnityEngine.Random.Range(i, list.Count);
@@ -162,10 +158,4 @@ public class GameController : MonoBehaviour
             list[randomIndex] = temp;
         }
     }
-   }
-
-
-    
-       
-       
-       
+}
