@@ -1,147 +1,76 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine;
+using TMPro; // Untuk teks efek jika menggunakan TextMeshPro
 
-public class Scene01 : MonoBehaviour
+public class SceneControl : MonoBehaviour
 {
-    public GameObject charAria;
-    public GameObject charEdgar;
-    public GameObject textBox;
-    public GameObject fadeOut;
+    public GameObject fadeOutEffect;   // Objek efek Fade Out
+    public TextMeshProUGUI textOpening;
+    public float lineSpacing = 1.5f; // Teks pembuka (dengan efek satu per satu)
+    public GameObject charAria;        // Karakter Aria
+    public GameObject charNaya;        // Karakter Naya
+    public GameObject dialogueManager; // Dialog Manager
+    public GameObject nextButton;      // Tombol Next untuk dialog
 
-    [SerializeField] string textToSpeak;
-    [SerializeField] int currentTextLength;
-    [SerializeField] int textLength;
-    [SerializeField] GameObject mainTextObject;
-    [SerializeField] GameObject nextButton;
-    [SerializeField] GameObject charName;
+    private bool isDialogueNexted = false; // Untuk memantau apakah tombol Next ditekan
 
-    private int eventPos = 0;
-
-    // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(EventStarter());
+        StartCoroutine(SceneSequence());
     }
 
-    void Update()
+    IEnumerator SceneSequence()
     {
-        textLength = TextCreator.charCount;
-
-        // Deteksi jika ada input keyboard untuk melanjutkan dialog
-        if (Input.anyKeyDown)
+        // 1. Fade Out Effect
+        if (fadeOutEffect != null)
         {
-            NextButton();
+            fadeOutEffect.SetActive(true); // Mengaktifkan efek Fade Out
+            yield return new WaitForSeconds(2f); // Tunggu hingga efek selesai
+            fadeOutEffect.SetActive(false); // Nonaktifkan efek
         }
-    }
 
-    IEnumerator EventStarter()
-    {
-        // Event 1
-        yield return new WaitForSeconds(1);
-        fadeOut.SetActive(true);
-        yield return new WaitForSeconds(1);
+        // 2. Text Opening muncul per kata
+        if (textOpening != null)
+        {
+            yield return ShowTextOneByOne(textOpening, "10 Tahun Kemudian.... Terdapat seorang pengembara yang memiliki kemampuan sihir sedang berjalan mencari sebuah desa terdekat. Aria menuju desa Elmwood untuk dijadikan tempat untuk ia menetap dan berisitirahat. Namun sesampainya di gerbang desa Elmwood.....");
+            yield return new WaitForSeconds(5); // Jeda setelah teks selesai
+            textOpening.gameObject.SetActive(false); // Hilangkan teks opening
+        }
+
         charAria.SetActive(true);
-        yield return new WaitForSeconds(1);
-        mainTextObject.SetActive(true);
-
-        StartDialog("Aria tiba di desa Elmwood. Disambut kepala desa, Edgar.", "Aria");
-        yield return WaitForTextToFinish();
-        
-        charEdgar.SetActive(true);
+        yield return new WaitForSeconds(3);
+        charNaya.SetActive(true);
         yield return new WaitForSeconds(2);
-        nextButton.SetActive(true);
-        eventPos = 1;
-    }
 
-    // Memulai dialog baru
-    void StartDialog(string dialogText, string speakerName)
-    {
-        textBox.SetActive(true);
-        charName.GetComponent<TMPro.TMP_Text>().text = speakerName;
-        textToSpeak = dialogText;
-        textBox.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
-        currentTextLength = textToSpeak.Length;
-        TextCreator.runTextPrint = true;
-    }
 
-    // Menunggu sampai teks selesai ditampilkan
-    IEnumerator WaitForTextToFinish()
-    {
-        yield return new WaitForSeconds(0.1f);
-        yield return new WaitUntil(() => textLength == currentTextLength);
-        yield return new WaitForSeconds(0.5f);
-    }
+        // 4. Mulai Dialog
+        ActivateObject(dialogueManager, true);
 
-    // Masing-masing event cerita
-    IEnumerator EventOne()
-    {
-        StartDialog("Selamat datang, Penyihir Aria. Kami sangat berterima kasih atas kedatanganmu. Desa ini... sudah terlalu lama berada di bawah bayang-bayang Dorian.", "Edgar");
-        yield return WaitForTextToFinish();
-        nextButton.SetActive(true);
-        eventPos = 2;
-    }
+        // 5. Aktifkan Naya
+        
 
-    IEnumerator EventTwo()
-    {
-        StartDialog("Aku sudah mendengar tentang keadaan desa ini. Aku datang sesuai tugasku untuk melindungi kalian. Apa yang harus kulakukan?", "Aria");
-        yield return WaitForTextToFinish();
-        nextButton.SetActive(true);
-        eventPos = 3;
-    }
-
-    IEnumerator EventThree()
-    {
-        StartDialog("Warga kami ketakutan. Dorian telah mengutuk sebagian besar dari kami. Terdapat banyak permintaan bantuan... Jika kau bisa menyelesaikan tugas mereka, mungkin kita bisa memperkuat sihir pelindung desa", "Edgar");
-        yield return WaitForTextToFinish();
-        nextButton.SetActive(true);
-        eventPos = 4;
-    }
-
-    IEnumerator EventFour()
-    {
-        StartDialog("Aku akan membantu sebanyak yang aku bisa. Apa kau bisa tunjukkan warga yang membutuhkan pertolongan?", "Aria");
-        yield return WaitForTextToFinish();
-        nextButton.SetActive(true);
-        eventPos = 5;
-    }
-
-    IEnumerator EventFive()
-    {
-        StartDialog("Ya... Tapi ingat, waktu kita terbatas. Dorian semakin mendekat. Jika kau tidak bisa membantu mereka, aku khawatir semuanya akan berakhir buruk", "Edgar");
-        yield return WaitForTextToFinish();
-        nextButton.SetActive(true);
-        eventPos = 6;
-    }
-
-    // Fungsi untuk tombol Next atau input keyboard
-    public void NextButton()
-    {
-        nextButton.SetActive(false); // Matikan tombol agar tidak bisa ditekan berulang kali
-
-        if (eventPos == 1)
+        // Fungsi untuk efek teks muncul satu per satu
+        IEnumerator ShowTextOneByOne(TextMeshProUGUI textComponent, string message)
         {
-            StartCoroutine(EventOne());
+            textComponent.text = ""; // Kosongkan teks terlebih dahulu
+            textComponent.gameObject.SetActive(true);
+
+            foreach (char c in message)
+            {
+                textComponent.text += c; // Tambahkan huruf satu per satu
+                yield return new WaitForSeconds(0.04f); // Waktu jeda antar huruf
+            }
         }
-        else if (eventPos == 2)
+
+        // Fungsi untuk mengaktifkan/menonaktifkan objek
+        void ActivateObject(GameObject obj, bool isActive)
         {
-            StartCoroutine(EventTwo());
+            if (obj != null)
+            {
+                obj.SetActive(isActive);
+            }
         }
-        else if (eventPos == 3)
-        {
-            StartCoroutine(EventThree());
-        }
-        else if (eventPos == 4)
-        {
-            StartCoroutine(EventFour());
-        }
-        else if (eventPos == 5)
-        {
-            StartCoroutine(EventFive());
-        }
-        else if (eventPos == 6)
-        {
-            SceneManager.LoadScene("Scene02");
-        }
+
+        // Fungsi untuk mendeteksi tombol Next ditekan
     }
 }
