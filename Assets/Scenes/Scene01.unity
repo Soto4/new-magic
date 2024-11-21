@@ -1152,7 +1152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1417476918
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1188,18 +1188,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1483206397}
   nameComponent: {fileID: 1781619517}
-  characterNames:
-  - Naya
-  - Aria
-  - Naya
-  - Aria
-  - Naya
-  - Aria
-  - Naya
-  - Aria
-  - Naya
-  - Aria
-  - Naya
   lines:
   - "Losiee\u2026.. Losieee\u2026 Dimana kamu?? "
   - Hei adik kecil.. Apa kamu sedang mencari sesuatu??
@@ -1212,6 +1200,18 @@ MonoBehaviour:
     terdapat kalung berwarna merah bertuliskan namanya. '
   - Baiklah kalau begitu ayo kita cari Losie!!!
   - ' Ayoo!!'
+  characterNames:
+  - Naya
+  - Aria
+  - Naya
+  - Aria
+  - Naya
+  - Aria
+  - Naya
+  - Aria
+  - Naya
+  - Aria
+  - Naya
   textSpeed: 0.05
 --- !u!114 &1417476920
 MonoBehaviour:
@@ -1395,7 +1395,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -3.1356, y: 20.491}
-  m_SizeDelta: {x: 1786.7794, y: 192.74}
+  m_SizeDelta: {x: 1743.2521, y: 192.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483206397
 MonoBehaviour:

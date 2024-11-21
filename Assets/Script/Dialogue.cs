@@ -1,84 +1,73 @@
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
-    public TextMeshProUGUI textComponent;
-    public TextMeshProUGUI nameComponent;
-    public string[] characterNames;
-    public string[] lines;
-    public float textSpeed;
+    
 
+    public TextMeshProUGUI textComponent;
+    public TextMeshProUGUI nameComponent; // Tambahkan untuk menampilkan nama karakter
+
+    public string[] lines;
+    public string[] characterNames; // Array untuk nama karakter
+
+    public float textSpeed;
     private int index;
-    private bool isTyping;
 
     void Start()
     {
-        this.enabled = false;
-    }
+        nameComponent.text = string.Empty; // Reset nama karakter
 
-    void OnEnable()
-    {
+        textComponent.text = string.Empty;
         StartDialogue();
     }
 
+
     void Update()
-{
-    if (Input.GetMouseButtonDown(0) || Input.anyKeyDown)
     {
-        Debug.Log("Input terdeteksi");
-        if (isTyping)
+        if (Input.GetMouseButtonDown(0))
         {
-            StopAllCoroutines();
-            textComponent.text = lines[index];
-            isTyping = false;
-        }
-        else
-        {
-            NextLine();
+            if (textComponent.text == lines[index])
+            {
+                NextLine();
+            }
+            else
+            {
+                StopAllCoroutines();
+                textComponent.text = lines[index];
+            }
         }
     }
-}
-
 
     void StartDialogue()
     {
         index = 0;
         DisplayCharacterName();
-        StartCoroutine(TypeLine());
+        StartCoroutine(typeline());
     }
 
-    IEnumerator TypeLine()
+    IEnumerator typeline()
     {
-        isTyping = true;
-        textComponent.text = "";
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-        isTyping = false;
     }
 
     void NextLine()
-{
-    if (index < lines.Length - 1)
     {
-        index++;
-        Debug.Log($"Pindah ke baris: {index}, Isi: {lines[index]}");
-        textComponent.text = string.Empty;
-        DisplayCharacterName();
-        StartCoroutine(TypeLine());
+        if (index < lines.Length - 1)
+        {
+            index++;
+            textComponent.text = string.Empty;
+            DisplayCharacterName(); // Update nama karakter
+            StartCoroutine(typeline());
+        }   
     }
-    else
-    {
-        Debug.Log("Dialog selesai!");
-        textComponent.text = ""; // Kosongkan teks jika dialog selesai
-        nameComponent.text = ""; // Kosongkan nama jika dialog selesai
-    }
-}
-
 
     void DisplayCharacterName()
     {
@@ -88,7 +77,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            nameComponent.text = "";
+            nameComponent.text = string.Empty;
         }
     }
 }
