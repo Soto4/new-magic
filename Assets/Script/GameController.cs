@@ -1,28 +1,23 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class GameController : MonoBehaviour
 {
-    [SerializeField]
-    private Sprite bgImage;
+    [SerializeField] private Sprite bgImage;
     public Sprite[] puzzles;
     public List<Sprite> gamePuzzles = new List<Sprite>();
     public List<Button> btns = new List<Button>();
-    private bool firstGuess, secondGuess;
-    private int countGuesses;
-    private int countCorrectGuesses;
-    private int gameGuesses;
-    private int firstGuessIndex, secondGuessIndex;
-    private string firstGuesspuzzle, secondGuessPuzzle;
-    [SerializeField] private GameObject gameOverPopup; // Panel Popup Game Over
 
+    private List<int> currentGuesses = new List<int>();
+    private int cardsToMatch;
+    private int correctMatches = 0;
+    private int score = 0;
 
-    [SerializeField]
-    private int maxFlips = 6; // Batas maksimal flip percobaan
+    [SerializeField] private Text scoreText;
+    [SerializeField] private int currentRound = 1;
+    [SerializeField] private GameObject winPopup;
 
     void Awake()
     {
@@ -31,40 +26,37 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        StartNewRound();
+    }
+
+    void StartNewRound()
+    {
+        ResetGame();
+        cardsToMatch = currentRound + 2; // Ronde 1: 3 kartu, Ronde 2: 4 kartu, Ronde 3: 5 kartu
         GetButtons();
-        AddListener();
         AddGamePuzzle();
         Shuffle(gamePuzzles);
-        gameGuesses = gamePuzzles.Count / 2;
+        scoreText.text = "Score: " + score;
+    }
+
+    void ResetGame()
+    {
+        gamePuzzles.Clear();
+        btns.Clear();
+        currentGuesses.Clear();
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("PuzzleButton");
+
+        foreach (GameObject obj in objects)
+        {
+            Button btn = obj.GetComponent<Button>();
+            btn.image.sprite = bgImage;
+            btn.interactable = true;
+            btn.image.color = Color.white;
+            btns.Add(btn);
+        }
     }
 
     void GetButtons()
-    {
-        GameObject[] objects = GameObject.FindGameObjectsWithTag("PuzzleButton");
-        for (int i = 0; i < objects.Length; i++)
-        {
-            btns.Add(objects[i].GetComponent<Button>());
-            btns[i].image.sprite = bgImage;
-        }
-    }
-
-    void AddGamePuzzle()
-    {
-        int looper = btns.Count;
-        int index = 0;
-
-        for (int i = 0; i < looper; i++)
-        {
-            if (index == looper / 2)
-            {
-                index = 0;
-            }
-            gamePuzzles.Add(puzzles[index]);
-            index++;
-        }
-    }
-
-    void AddListener()
     {
         foreach (Button btn in btns)
         {
@@ -72,79 +64,11 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void PickAPuzzle()
-{
-    if (countGuesses >= maxFlips)
+    void AddGamePuzzle()
     {
-        GameOver();
-        return;
-    }
-
-    string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
-    if (!firstGuess)
-    {
-        firstGuess = true;
-        firstGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
-        firstGuesspuzzle = gamePuzzles[firstGuessIndex].name;
-        btns[firstGuessIndex].image.sprite = gamePuzzles[firstGuessIndex];
-    }
-    else if (!secondGuess)
-    {
-        secondGuess = true;
-        secondGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
-        secondGuessPuzzle = gamePuzzles[secondGuessIndex].name;
-        btns[secondGuessIndex].image.sprite = gamePuzzles[secondGuessIndex];
-        countGuesses++;
-        StartCoroutine(CheckIfThePuzzlesMatch());
-    }
-}
-private void GameOver()
-{
-    foreach (Button btn in btns)
-    {
-        btn.interactable = false; // Nonaktifkan semua tombol
-    }
-    gameOverPopup.SetActive(true); // Tampilkan popup
-    Debug.Log("Game Over! You exceeded the maximum number of flips.");
-}
-
-
-    IEnumerator CheckIfThePuzzlesMatch()
-    {
-        yield return new WaitForSeconds(1f);
-        if (firstGuesspuzzle == secondGuessPuzzle)
+        for (int i = 0; i < btns.Count; i++)
         {
-            yield return new WaitForSeconds(.5f);
-            btns[firstGuessIndex].interactable = false;
-            btns[secondGuessIndex].interactable = false;
-
-            btns[firstGuessIndex].image.color = new Color(0, 0, 0, 0);
-            btns[secondGuessIndex].image.color = new Color(0, 0, 0, 0);
-            CheckIfTheGameIsFinish();
-        }
-        else
-        {
-            btns[firstGuessIndex].image.sprite = bgImage;
-            btns[secondGuessIndex].image.sprite = bgImage;
-        }
-        yield return new WaitForSeconds(.5f);
-        firstGuess = secondGuess = false;
-    }
-
-    void CheckIfTheGameIsFinish()
-    {
-        countCorrectGuesses++;
-        if (countCorrectGuesses == gameGuesses)
-        {
-            if (countGuesses <= maxFlips)
-            {
-                Debug.Log("You Won!");
-                Debug.Log("It Took You " + countGuesses + " guesses to finish the game!");
-            }
-            else
-            {
-                Debug.Log("Game Over! You exceeded the maximum number of flips.");
-            }
+            gamePuzzles.Add(puzzles[i % puzzles.Length]);
         }
     }
 
@@ -157,5 +81,78 @@ private void GameOver()
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
         }
+    }
+
+    public void PickAPuzzle()
+    {
+        int index = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+        Button btn = btns[index];
+
+        if (!currentGuesses.Contains(index))
+        {
+            currentGuesses.Add(index);
+            btn.image.sprite = gamePuzzles[index];
+
+            if (currentGuesses.Count == cardsToMatch)
+            {
+                StartCoroutine(CheckIfThePuzzlesMatch());
+            }
+        }
+    }
+
+    IEnumerator CheckIfThePuzzlesMatch()
+    {
+        yield return new WaitForSeconds(1f);
+
+        bool isMatch = true;
+        string firstName = gamePuzzles[currentGuesses[0]].name;
+
+        foreach (int index in currentGuesses)
+        {
+            if (gamePuzzles[index].name != firstName)
+            {
+                isMatch = false;
+                break;
+            }
+        }
+
+        if (isMatch)
+        {
+            foreach (int index in currentGuesses)
+            {
+                btns[index].interactable = false;
+                btns[index].image.color = new Color(0, 0, 0, 0);
+            }
+
+            correctMatches++;
+            if (correctMatches == btns.Count / cardsToMatch)
+            {
+                score++;
+                currentRound++;
+                if (currentRound > 3)
+                {
+                    WinGame();
+                }
+                else
+                {
+                    StartNewRound();
+                }
+            }
+        }
+        else
+        {
+            foreach (int index in currentGuesses)
+            {
+                btns[index].image.sprite = bgImage;
+            }
+        }
+
+        currentGuesses.Clear();
+    }
+
+    void WinGame()
+    {
+        winPopup.SetActive(true);
+        scoreText.text = "Congratulations! Final Score: " + score;
     }
 }
