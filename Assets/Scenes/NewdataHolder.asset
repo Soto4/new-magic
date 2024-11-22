@@ -12,8 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4894e869e3b04b4899d385210b17cee, type: 3}
   m_Name: NewdataHolder
   m_EditorClassIdentifier: 
-  scenes:
-  - sceneName: 
-    sceneID: 0
-  - sceneName: 
-    sceneID: 0
+  scenes: []

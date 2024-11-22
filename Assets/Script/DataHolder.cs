@@ -7,5 +7,5 @@ using UnityEngine;
 [System.Serializable]
 public class DataHolder : ScriptableObject
 {
-    public List<GameScene> scenes;
+    public List<Scene01> scenes;
 }

@@ -1,7 +1,7 @@
 using System;
 
 [System.Serializable]
-public class GameScene
+public class Scene01
 {
     public string sceneName;
     public int sceneID;
