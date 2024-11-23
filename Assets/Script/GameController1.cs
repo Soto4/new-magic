@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; // Tambahkan untuk scene management
 
-
-public class GameController : MonoBehaviour
+public class GameController1 : MonoBehaviour
 {
     [SerializeField]
     private Sprite bgImage;
@@ -18,11 +18,6 @@ public class GameController : MonoBehaviour
     private int gameGuesses;
     private int firstGuessIndex, secondGuessIndex;
     private string firstGuesspuzzle, secondGuessPuzzle;
-    [SerializeField] private GameObject gameOverPopup; // Panel Popup Game Over
-
-
-    [SerializeField]
-    private int maxFlips = 6; // Batas maksimal flip percobaan
 
     void Awake()
     {
@@ -73,41 +68,25 @@ public class GameController : MonoBehaviour
     }
 
     public void PickAPuzzle()
-{
-    if (countGuesses >= maxFlips)
     {
-        GameOver();
-        return;
+        string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
+        if (!firstGuess)
+        {
+            firstGuess = true;
+            firstGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+            firstGuesspuzzle = gamePuzzles[firstGuessIndex].name;
+            btns[firstGuessIndex].image.sprite = gamePuzzles[firstGuessIndex];
+        }
+        else if (!secondGuess)
+        {
+            secondGuess = true;
+            secondGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+            secondGuessPuzzle = gamePuzzles[secondGuessIndex].name;
+            btns[secondGuessIndex].image.sprite = gamePuzzles[secondGuessIndex];
+            countGuesses++;
+            StartCoroutine(CheckIfThePuzzlesMatch());
+        }
     }
-
-    string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
-    if (!firstGuess)
-    {
-        firstGuess = true;
-        firstGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
-        firstGuesspuzzle = gamePuzzles[firstGuessIndex].name;
-        btns[firstGuessIndex].image.sprite = gamePuzzles[firstGuessIndex];
-    }
-    else if (!secondGuess)
-    {
-        secondGuess = true;
-        secondGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
-        secondGuessPuzzle = gamePuzzles[secondGuessIndex].name;
-        btns[secondGuessIndex].image.sprite = gamePuzzles[secondGuessIndex];
-        countGuesses++;
-        StartCoroutine(CheckIfThePuzzlesMatch());
-    }
-}
-private void GameOver()
-{
-    foreach (Button btn in btns)
-    {
-        btn.interactable = false; // Nonaktifkan semua tombol
-    }
-    gameOverPopup.SetActive(true); // Tampilkan popup
-    Debug.Log("Game Over! You exceeded the maximum number of flips.");
-}
-
 
     IEnumerator CheckIfThePuzzlesMatch()
     {
@@ -136,16 +115,15 @@ private void GameOver()
         countCorrectGuesses++;
         if (countCorrectGuesses == gameGuesses)
         {
-            if (countGuesses <= maxFlips)
-            {
-                Debug.Log("You Won!");
-                Debug.Log("It Took You " + countGuesses + " guesses to finish the game!");
-            }
-            else
-            {
-                Debug.Log("Game Over! You exceeded the maximum number of flips.");
-            }
+            Debug.Log("You Won!");
+            Debug.Log("It Took You " + countGuesses + " guesses to finish the game!");
+            LoadNextScene(); // Pindah ke scene berikutnya
         }
+    }
+
+    void LoadNextScene()
+    {
+        SceneManager.LoadScene("Minigame1(Ronde2)"); // Ganti "NextSceneName" dengan nama scene tujuan
     }
 
     void Shuffle(List<Sprite> list)
