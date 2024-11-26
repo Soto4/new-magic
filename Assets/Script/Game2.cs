@@ -5,19 +5,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement; // Tambahkan untuk scene management
 
-public class GameController3 : MonoBehaviour
+public class GameController2 : MonoBehaviour
 {
-    [SerializeField]
-    private Sprite bgImage;
+    [SerializeField] private Sprite bgImage;
+    [SerializeField] private GameObject gameOverPopup; // Panel Popup Game Over
+    [SerializeField] private GameObject successPopup; // Panel Popup Success
+    [SerializeField] private Text remainingClicksText; // UI untuk sisa klik
+
     public Sprite[] puzzles;
     public List<Sprite> gamePuzzles = new List<Sprite>();
     public List<Button> btns = new List<Button>();
+
     private bool firstGuess, secondGuess;
-    private int countGuesses;
+    private int countClicks;
     private int countCorrectGuesses;
     private int gameGuesses;
     private int firstGuessIndex, secondGuessIndex;
-    private string firstGuesspuzzle, secondGuessPuzzle;
+    private string firstGuessPuzzle, secondGuessPuzzle;
+
+    [SerializeField] private int maxClicks = 10; // Batas maksimal klik
 
     void Awake()
     {
@@ -31,6 +37,10 @@ public class GameController3 : MonoBehaviour
         AddGamePuzzle();
         Shuffle(gamePuzzles);
         gameGuesses = gamePuzzles.Count / 2;
+
+        UpdateRemainingClicks();
+        gameOverPopup.SetActive(false);
+        successPopup.SetActive(false);
     }
 
     void GetButtons()
@@ -69,36 +79,74 @@ public class GameController3 : MonoBehaviour
 
     public void PickAPuzzle()
     {
-        string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
+        if (countClicks >= maxClicks)
+        {
+            GameOver();
+            return;
+        }
+
+        // Hitung klik dan perbarui UI
+        countClicks++;
+        UpdateRemainingClicks();
+
+        int buttonIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+
+        if (!btns[buttonIndex].interactable) return;
+
+        btns[buttonIndex].image.sprite = gamePuzzles[buttonIndex];
+
         if (!firstGuess)
         {
             firstGuess = true;
-            firstGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
-            firstGuesspuzzle = gamePuzzles[firstGuessIndex].name;
-            btns[firstGuessIndex].image.sprite = gamePuzzles[firstGuessIndex];
+            firstGuessIndex = buttonIndex;
+            firstGuessPuzzle = gamePuzzles[firstGuessIndex].name;
         }
         else if (!secondGuess)
         {
             secondGuess = true;
-            secondGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+            secondGuessIndex = buttonIndex;
             secondGuessPuzzle = gamePuzzles[secondGuessIndex].name;
-            btns[secondGuessIndex].image.sprite = gamePuzzles[secondGuessIndex];
-            countGuesses++;
             StartCoroutine(CheckIfThePuzzlesMatch());
         }
+
+        // Cek jika klik habis setelah memilih
+        if (countClicks >= maxClicks && countCorrectGuesses < gameGuesses)
+        {
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        foreach (Button btn in btns)
+        {
+            btn.interactable = false; // Nonaktifkan semua tombol
+        }
+        gameOverPopup.SetActive(true); // Tampilkan popup Game Over
+    }
+
+    private void Success()
+    {
+        foreach (Button btn in btns)
+        {
+            btn.interactable = false; // Nonaktifkan semua tombol
+        }
+        successPopup.SetActive(true); // Tampilkan popup Success
     }
 
     IEnumerator CheckIfThePuzzlesMatch()
     {
         yield return new WaitForSeconds(1f);
-        if (firstGuesspuzzle == secondGuessPuzzle)
+
+        if (firstGuessPuzzle == secondGuessPuzzle)
         {
-            yield return new WaitForSeconds(.5f);
             btns[firstGuessIndex].interactable = false;
             btns[secondGuessIndex].interactable = false;
 
             btns[firstGuessIndex].image.color = new Color(0, 0, 0, 0);
             btns[secondGuessIndex].image.color = new Color(0, 0, 0, 0);
+
+            countCorrectGuesses++;
             CheckIfTheGameIsFinish();
         }
         else
@@ -106,24 +154,16 @@ public class GameController3 : MonoBehaviour
             btns[firstGuessIndex].image.sprite = bgImage;
             btns[secondGuessIndex].image.sprite = bgImage;
         }
-        yield return new WaitForSeconds(.5f);
+
         firstGuess = secondGuess = false;
     }
 
     void CheckIfTheGameIsFinish()
     {
-        countCorrectGuesses++;
         if (countCorrectGuesses == gameGuesses)
         {
-            Debug.Log("You Won!");
-            Debug.Log("It Took You " + countGuesses + " guesses to finish the game!");
-            LoadNextScene(); // Pindah ke scene berikutnya
+            Success();
         }
-    }
-
-    void LoadNextScene()
-    {
-        SceneManager.LoadScene("Minigame1(Ronde3)"); // Ganti "NextSceneName" dengan nama scene tujuan
     }
 
     void Shuffle(List<Sprite> list)
@@ -136,4 +176,12 @@ public class GameController3 : MonoBehaviour
             list[randomIndex] = temp;
         }
     }
+
+   void UpdateRemainingClicks()
+{
+    int remainingClicks = maxClicks - countClicks;
+    Debug.Log("Clicks: " + remainingClicks + "/" + maxClicks); // Tambahkan ini
+    remainingClicksText.text = "Clicks: " + remainingClicks + "/" + maxClicks;
+}
+
 }

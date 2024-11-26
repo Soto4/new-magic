@@ -3,21 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // Tambahkan untuk scene management
+using UnityEngine.SceneManagement;
 
-public class GameController1 : MonoBehaviour
+public class GameController09 : MonoBehaviour
 {
     [SerializeField]
     private Sprite bgImage;
     public Sprite[] puzzles;
     public List<Sprite> gamePuzzles = new List<Sprite>();
     public List<Button> btns = new List<Button>();
+
     private bool firstGuess, secondGuess;
     private int countGuesses;
     private int countCorrectGuesses;
     private int gameGuesses;
     private int firstGuessIndex, secondGuessIndex;
     private string firstGuesspuzzle, secondGuessPuzzle;
+
+    // Timer variables
+    public float gameTime = 60f; // Waktu dalam detik
+    private float remainingTime;
+    public Text timerText; // UI Text untuk waktu
+    public GameObject gameOverPanel; // Panel untuk Game Over
 
     void Awake()
     {
@@ -26,11 +33,31 @@ public class GameController1 : MonoBehaviour
 
     void Start()
     {
+        remainingTime = gameTime;
+        gameOverPanel.SetActive(false);
         GetButtons();
         AddListener();
         AddGamePuzzle();
         Shuffle(gamePuzzles);
         gameGuesses = gamePuzzles.Count / 2;
+    }
+
+    void Update()
+    {
+        if (remainingTime > 0)
+        {
+            remainingTime -= Time.deltaTime;
+            UpdateTimerUI();
+        }
+        else if (!gameOverPanel.activeSelf) // Pastikan hanya dipanggil sekali
+        {
+            GameOver();
+        }
+    }
+
+    void UpdateTimerUI()
+    {
+        timerText.text = "Time: " + Mathf.Ceil(remainingTime).ToString() + "s";
     }
 
     void GetButtons()
@@ -115,15 +142,24 @@ public class GameController1 : MonoBehaviour
         countCorrectGuesses++;
         if (countCorrectGuesses == gameGuesses)
         {
-            Debug.Log("You Won!");
-            Debug.Log("It Took You " + countGuesses + " guesses to finish the game!");
-            LoadNextScene(); // Pindah ke scene berikutnya
+            if (remainingTime > 0)
+            {
+                Debug.Log("You Won!");
+                Debug.Log("It Took You " + countGuesses + " guesses to finish the game!");
+                LoadNextScene();
+            }
         }
     }
 
     void LoadNextScene()
     {
-        SceneManager.LoadScene("Minigame1(Ronde2)"); // Ganti "NextSceneName" dengan nama scene tujuan
+        SceneManager.LoadScene("Minigame1(Ronde2)"); // Ganti nama scene sesuai kebutuhan
+    }
+
+    void GameOver()
+    {
+        Debug.Log("Game Over!");
+        gameOverPanel.SetActive(true);
     }
 
     void Shuffle(List<Sprite> list)

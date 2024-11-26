@@ -3,21 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // Tambahkan untuk scene management
 
-public class GameController2 : MonoBehaviour
+public class GameController1 : MonoBehaviour
 {
     [SerializeField]
     private Sprite bgImage;
     public Sprite[] puzzles;
     public List<Sprite> gamePuzzles = new List<Sprite>();
     public List<Button> btns = new List<Button>();
+
     private bool firstGuess, secondGuess;
+    private bool isChecking; // Tambahan untuk mengunci input saat pengecekan
     private int countGuesses;
     private int countCorrectGuesses;
     private int gameGuesses;
     private int firstGuessIndex, secondGuessIndex;
     private string firstGuesspuzzle, secondGuessPuzzle;
+
+    public GameObject popupPanel;
 
     void Awake()
     {
@@ -31,6 +34,8 @@ public class GameController2 : MonoBehaviour
         AddGamePuzzle();
         Shuffle(gamePuzzles);
         gameGuesses = gamePuzzles.Count / 2;
+        popupPanel.SetActive(false);
+        isChecking = false; // Pastikan pengecekan tidak aktif di awal
     }
 
     void GetButtons()
@@ -69,20 +74,26 @@ public class GameController2 : MonoBehaviour
 
     public void PickAPuzzle()
     {
-        string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
+        if (isChecking) return; // Abaikan input jika sedang memeriksa
+
+        int buttonIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+
+        if (!btns[buttonIndex].interactable) return;
+
+        btns[buttonIndex].image.sprite = gamePuzzles[buttonIndex];
+
         if (!firstGuess)
         {
             firstGuess = true;
-            firstGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+            firstGuessIndex = buttonIndex;
             firstGuesspuzzle = gamePuzzles[firstGuessIndex].name;
-            btns[firstGuessIndex].image.sprite = gamePuzzles[firstGuessIndex];
         }
         else if (!secondGuess)
         {
             secondGuess = true;
-            secondGuessIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
+            secondGuessIndex = buttonIndex;
             secondGuessPuzzle = gamePuzzles[secondGuessIndex].name;
-            btns[secondGuessIndex].image.sprite = gamePuzzles[secondGuessIndex];
+
             countGuesses++;
             StartCoroutine(CheckIfThePuzzlesMatch());
         }
@@ -90,40 +101,46 @@ public class GameController2 : MonoBehaviour
 
     IEnumerator CheckIfThePuzzlesMatch()
     {
+        isChecking = true; // Kunci input saat pengecekan
         yield return new WaitForSeconds(1f);
+
         if (firstGuesspuzzle == secondGuessPuzzle)
         {
-            yield return new WaitForSeconds(.5f);
             btns[firstGuessIndex].interactable = false;
             btns[secondGuessIndex].interactable = false;
 
             btns[firstGuessIndex].image.color = new Color(0, 0, 0, 0);
             btns[secondGuessIndex].image.color = new Color(0, 0, 0, 0);
+
+            countCorrectGuesses++;
             CheckIfTheGameIsFinish();
         }
         else
         {
+            yield return new WaitForSeconds(0.5f);
             btns[firstGuessIndex].image.sprite = bgImage;
             btns[secondGuessIndex].image.sprite = bgImage;
         }
-        yield return new WaitForSeconds(.5f);
-        firstGuess = secondGuess = false;
+
+        // Reset tebakan
+        firstGuess = false;
+        secondGuess = false;
+        isChecking = false; // Buka kembali input
     }
 
     void CheckIfTheGameIsFinish()
     {
-        countCorrectGuesses++;
         if (countCorrectGuesses == gameGuesses)
         {
             Debug.Log("You Won!");
             Debug.Log("It Took You " + countGuesses + " guesses to finish the game!");
-            LoadNextScene(); // Pindah ke scene berikutnya
+            ShowPopup();
         }
     }
 
-    void LoadNextScene()
+    void ShowPopup()
     {
-        SceneManager.LoadScene("Minigame1(Ronde3)"); // Ganti "NextSceneName" dengan nama scene tujuan
+        popupPanel.SetActive(true);
     }
 
     void Shuffle(List<Sprite> list)
