@@ -1,18 +1,19 @@
 using System.Collections;
 using UnityEngine;
-using TMPro; // Untuk teks efek jika menggunakan TextMeshPro
+using TMPro;
 
 public class SceneControl : MonoBehaviour
 {
     public GameObject fadeOutEffect;   // Objek efek Fade Out
     public TextMeshProUGUI textOpening;
-    public float lineSpacing = 1.5f; // Teks pembuka (dengan efek satu per satu)
+    public float letterDelay = 0.04f;  // Waktu jeda antar huruf
     public GameObject charAria;        // Karakter Aria
     public GameObject charNaya;        // Karakter Naya
     public GameObject dialogueManager; // Dialog Manager
-    public GameObject nextButton;      // Tombol Next untuk dialog
 
-    private bool isDialogueNexted = false; // Untuk memantau apakah tombol Next ditekan
+    private bool isTextFinished = false; // Menandai apakah teks sudah selesai
+    private bool skipText = false;       // Menandai klik untuk melewati animasi teks
+    private bool isTextActive = false;   // Menandai apakah teks opening sedang aktif
 
     void Start()
     {
@@ -32,45 +33,80 @@ public class SceneControl : MonoBehaviour
         // 2. Text Opening muncul per kata
         if (textOpening != null)
         {
-            yield return ShowTextOneByOne(textOpening, "10 Tahun Kemudian.... Terdapat seorang pengembara yang memiliki kemampuan sihir sedang berjalan mencari sebuah desa terdekat. Aria menuju desa Elmwood untuk dijadikan tempat untuk ia menetap dan berisitirahat. Namun sesampainya di gerbang desa Elmwood.....");
-            yield return new WaitForSeconds(5); // Jeda setelah teks selesai
-            textOpening.gameObject.SetActive(false); // Hilangkan teks opening
+            isTextActive = true;
+            yield return ShowTextOneByOne(textOpening, 
+                "10 Tahun Kemudian.... Terdapat seorang pengembara yang memiliki kemampuan sihir sedang berjalan mencari sebuah desa terdekat. Aria menuju desa Elmwood untuk dijadikan tempat untuk ia menetap dan beristirahat. Namun sesampainya di gerbang desa Elmwood.....");
         }
 
+        // Tunggu hingga klik berikutnya untuk melanjutkan
+        yield return WaitForNextClick();
+        textOpening.gameObject.SetActive(false); // Hilangkan teks opening
+        isTextActive = false;
+
+        // 3. Aktifkan karakter
         charAria.SetActive(true);
         yield return new WaitForSeconds(3);
         charNaya.SetActive(true);
         yield return new WaitForSeconds(2);
 
-
         // 4. Mulai Dialog
         ActivateObject(dialogueManager, true);
+    }
 
-        // 5. Aktifkan Naya
-        
+    IEnumerator ShowTextOneByOne(TextMeshProUGUI textComponent, string message)
+    {
+        textComponent.text = ""; // Kosongkan teks terlebih dahulu
+        textComponent.gameObject.SetActive(true);
+        isTextFinished = false; // Reset status teks selesai
 
-        // Fungsi untuk efek teks muncul satu per satu
-        IEnumerator ShowTextOneByOne(TextMeshProUGUI textComponent, string message)
+        for (int i = 0; i < message.Length; i++)
         {
-            textComponent.text = ""; // Kosongkan teks terlebih dahulu
-            textComponent.gameObject.SetActive(true);
-
-            foreach (char c in message)
+            if (skipText)
             {
-                textComponent.text += c; // Tambahkan huruf satu per satu
-                yield return new WaitForSeconds(0.04f); // Waktu jeda antar huruf
+                textComponent.text = message; // Tampilkan seluruh teks
+                break;
             }
+
+            textComponent.text += message[i]; // Tambahkan huruf satu per satu
+            yield return new WaitForSeconds(letterDelay);
         }
 
-        // Fungsi untuk mengaktifkan/menonaktifkan objek
-        void ActivateObject(GameObject obj, bool isActive)
+        isTextFinished = true; // Teks selesai ditampilkan
+        skipText = false;      // Reset status skip
+    }
+
+    IEnumerator WaitForNextClick()
+    {
+        // Tunggu hingga pengguna menekan tombol mouse atau keyboard
+        while (!Input.GetMouseButtonDown(0) && !Input.anyKeyDown)
         {
-            if (obj != null)
+            yield return null; // Tunggu satu frame
+        }
+    }
+
+    void Update()
+    {
+        // Deteksi input saat teks opening aktif
+        if (isTextActive && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)))
+        {
+            if (!isTextFinished)
             {
-                obj.SetActive(isActive);
+                skipText = true; // Langsung tampilkan seluruh teks
+            }
+            else
+            {
+                textOpening.gameObject.SetActive(false); // Sembunyikan teks
+                isTextActive = false;
             }
         }
+    }
 
-        // Fungsi untuk mendeteksi tombol Next ditekan
+    // Fungsi untuk mengaktifkan/menonaktifkan objek
+    void ActivateObject(GameObject obj, bool isActive)
+    {
+        if (obj != null)
+        {
+            obj.SetActive(isActive);
+        }
     }
 }

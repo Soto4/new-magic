@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2f78f969a8d57534eb7af774529bf31e
+guid: 395ad6b152ea61c4086144e4742ab03d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -53,7 +53,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -123,12 +123,201 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_0
+      name: buttons (1)_0
       rect:
         serializedVersion: 2
-        x: 60
-        y: 1060
-        width: 440
+        x: 80
+        y: 960
+        width: 260
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58220bdbe2c58040bcb4c6f5ac1abe4
+      internalID: 190033664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons (1)_1
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 960
+        width: 260
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb61a519d3db9d4989813d80f023879
+      internalID: -369921440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons (1)_2
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1000
+        width: 90
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b28a54a24d160747bdc15895c9fae21
+      internalID: 1118691712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons (1)_3
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 1000
+        width: 90
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12cb26c387a90144a885adf1557476a
+      internalID: -1840451787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons (1)_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 790
+        width: 140
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 336648c10d0143a419a6719b22ca3f7c
+      internalID: -629516640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons (1)_5
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 800
+        width: 480
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1f4d60792df854d9660b56ad8faa7e
+      internalID: -1076306606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons (1)_6
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 790
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d5aa9ea1fafc144b38bbb97e86e665
+      internalID: -900830942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons (1)_7
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 790
+        width: 40
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09e1e05a3072a734c89d65dd30bb139a
+      internalID: -396772996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons (1)_8
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 640
+        width: 150
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8870ea5d43b77439c06f37dbadad82
+      internalID: -812675139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons (1)_9
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 570
+        width: 180
         height: 170
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -137,40 +326,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12a816b654275d04d9fda8bae6a68d62
-      internalID: 1521531711
+      spriteID: acc3a4f7aaad7fa47a17f9ad1db9cdfe
+      internalID: 1995284722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_1
+      name: buttons (1)_10
       rect:
         serializedVersion: 2
-        x: 710
-        y: 1060
-        width: 440
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5467ee1e79d4ad14688076026af85362
-      internalID: -838941026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_2
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 760
-        width: 440
+        x: 780
+        y: 570
+        width: 180
         height: 170
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -179,104 +347,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7b5ef7d9c3090544ae8c6a6588e2515
-      internalID: 1063131
+      spriteID: e89eed6ca22b3dd408bef8c1efef4dcc
+      internalID: -1156731902
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_3
-      rect:
-        serializedVersion: 2
-        x: 710
-        y: 760
-        width: 440
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48594581f7330074685f6b849215b87c
-      internalID: -1533017316
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_4
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 520
-        width: 570
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 417da944597271f4192c12b5d7674359
-      internalID: 730108577
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_5
-      rect:
-        serializedVersion: 2
-        x: 670
-        y: 520
-        width: 570
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0dbae63b2898a9d4abc3bc09172fb49e
-      internalID: 1015598433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 250
-        width: 643
-        height: 170
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb9ff085d7de37548a5864a680bd47e5
-      internalID: 748966350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_7
+      name: buttons (1)_11
       rect:
         serializedVersion: 2
         x: 30
-        y: 70
-        width: 440
-        height: 170
+        y: 400
+        width: 1210
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +368,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0391525ef925309458eff12453aad9e9
-      internalID: 363504091
+      spriteID: 1ae9b688c1797754793cd2d6c3a51cbe
+      internalID: -1244400162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_8
+      name: buttons (1)_12
       rect:
         serializedVersion: 2
-        x: 680
-        y: 70
-        width: 440
-        height: 150
+        x: 30
+        y: 280
+        width: 1210
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,91 +389,80 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80bea21f0608a9040ae2e570374ba84c
-      internalID: 1451385691
+      spriteID: db0213db4c9930b498dce7ca23d82721
+      internalID: -1053179838
       vertices: []
       indices: 
       edges: []
       weights: []
-    outline:
-    - - {x: -597, y: -398}
-      - {x: -612, y: -413}
-      - {x: -612, y: -572}
-      - {x: -168, y: -572}
-      - {x: -168, y: -399}
-      - {x: -200, y: -398}
-    - - {x: 55, y: -418}
-      - {x: 47, y: -424}
-      - {x: 38, y: -435}
-      - {x: 38, y: -562}
-      - {x: 39, y: -568}
-      - {x: 40, y: -572}
-      - {x: 482, y: -572}
-      - {x: 482, y: -418}
-    - - {x: -640, y: -218}
-      - {x: -640, y: -392}
-      - {x: 640, y: -392}
-      - {x: 640, y: -224}
-      - {x: 494, y: -218}
-    - - {x: -612, y: 52}
-      - {x: -622, y: 40}
-      - {x: -622, y: -122}
-      - {x: -48, y: -122}
-      - {x: -48, y: 52}
-    - - {x: 601, y: 27}
-      - {x: 592, y: 32}
-      - {x: 59, y: 32}
-      - {x: 28, y: 31}
-      - {x: 28, y: -108}
-      - {x: 45, y: -122}
-      - {x: 569, y: -122}
-      - {x: 591, y: -115}
-      - {x: 602, y: -103}
-      - {x: 602, y: 17}
-    - - {x: -575, y: 292}
-      - {x: -580, y: 290}
-      - {x: -582, y: 275}
-      - {x: -582, y: 126}
-      - {x: -574, y: 118}
-      - {x: -141, y: 118}
-      - {x: -138, y: 124}
-      - {x: -138, y: 292}
-    - - {x: 86, y: 272}
-      - {x: 68, y: 251}
-      - {x: 68, y: 118}
-      - {x: 512, y: 118}
-      - {x: 512, y: 268}
-      - {x: 508, y: 272}
-    - - {x: -582, y: 592}
-      - {x: -582, y: 418}
-      - {x: -138, y: 418}
-      - {x: -138, y: 577}
-      - {x: -153, y: 592}
-    - - {x: 71, y: 572}
-      - {x: 68, y: 566}
-      - {x: 68, y: 418}
-      - {x: 512, y: 418}
-      - {x: 512, y: 558}
-      - {x: 495, y: 572}
+    - serializedVersion: 2
+      name: buttons (1)_13
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 160
+        width: 1210
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e460ee7887fdb840a11e95f9345a83d
+      internalID: -465048462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons (1)_14
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 40
+        width: 1210
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc11f25445e14564fa24d305d727f838
+      internalID: -594277565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_0: 1521531711
-      WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_1: -838941026
-      WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_2: 1063131
-      WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_3: -1533017316
-      WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_4: 730108577
-      WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_5: 1015598433
-      WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_6: 748966350
-      WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_7: 363504091
-      WhatsApp_Image_2024-11-05_at_20.30.49_4d892e24-removebg_8: 1451385691
+      buttons (1)_0: 190033664
+      buttons (1)_1: -369921440
+      buttons (1)_10: -1156731902
+      buttons (1)_11: -1244400162
+      buttons (1)_12: -1053179838
+      buttons (1)_13: -465048462
+      buttons (1)_14: -594277565
+      buttons (1)_2: 1118691712
+      buttons (1)_3: -1840451787
+      buttons (1)_4: -629516640
+      buttons (1)_5: -1076306606
+      buttons (1)_6: -900830942
+      buttons (1)_7: -396772996
+      buttons (1)_8: -812675139
+      buttons (1)_9: 1995284722
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
