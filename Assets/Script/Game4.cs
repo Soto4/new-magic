@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -25,6 +23,10 @@ public class GameController : MonoBehaviour
     private float remainingTime;
     public Text timerText; // UI Text untuk waktu
     public GameObject gameOverPanel; // Panel untuk Game Over
+    public GameObject successPanel; // Panel untuk Sukses
+
+    // Card count
+    public int totalPairs = 8; // Total pasangan kartu yang dapat diubah di Inspector
 
     // Click limit variables
     public int maxClicks = 20; // Batas maksimal klik
@@ -40,11 +42,12 @@ public class GameController : MonoBehaviour
     {
         remainingTime = gameTime;
         gameOverPanel.SetActive(false);
+        successPanel.SetActive(false);
         GetButtons();
         AddListener();
         AddGamePuzzle();
         Shuffle(gamePuzzles);
-        gameGuesses = gamePuzzles.Count / 2;
+        gameGuesses = totalPairs;
 
         UpdateTimerUI();
         UpdateClickCounterUI();
@@ -76,26 +79,39 @@ public class GameController : MonoBehaviour
     void GetButtons()
     {
         GameObject[] objects = GameObject.FindGameObjectsWithTag("PuzzleButton");
-        for (int i = 0; i < objects.Length; i++)
+
+        // Hapus tombol jika jumlahnya melebihi kebutuhan
+        if (objects.Length > totalPairs * 2)
         {
-            btns.Add(objects[i].GetComponent<Button>());
-            btns[i].image.sprite = bgImage;
+            for (int i = totalPairs * 2; i < objects.Length; i++)
+            {
+                Destroy(objects[i]);
+            }
+        }
+
+        // Tambahkan tombol jika kurang
+        for (int i = 0; i < totalPairs * 2 - objects.Length; i++)
+        {
+            GameObject newButton = Instantiate(objects[0], objects[0].transform.parent);
+            newButton.name = (objects.Length + i).ToString();
+        }
+
+        btns.Clear();
+        objects = GameObject.FindGameObjectsWithTag("PuzzleButton");
+        foreach (GameObject obj in objects)
+        {
+            btns.Add(obj.GetComponent<Button>());
+            obj.GetComponent<Button>().image.sprite = bgImage;
         }
     }
 
     void AddGamePuzzle()
     {
-        int looper = btns.Count;
-        int index = 0;
-
-        for (int i = 0; i < looper; i++)
+        gamePuzzles.Clear();
+        for (int i = 0; i < totalPairs; i++)
         {
-            if (index == puzzles.Length) // Pastikan index kembali ke 0 jika habis
-            {
-                index = 0;
-            }
-            gamePuzzles.Add(puzzles[index]);
-            index++;
+            gamePuzzles.Add(puzzles[i]);
+            gamePuzzles.Add(puzzles[i]); // Tambahkan duplikat untuk pasangan
         }
     }
 
@@ -171,14 +187,9 @@ public class GameController : MonoBehaviour
             if (remainingTime > 0)
             {
                 Debug.Log("You Won!");
-                LoadNextScene();
+                successPanel.SetActive(true); // Menampilkan panel sukses
             }
         }
-    }
-
-    void LoadNextScene()
-    {
-        SceneManager.LoadScene("Minigame1(Ronde2)");
     }
 
     void GameOver()
