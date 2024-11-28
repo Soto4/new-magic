@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185688b47ec08c74ba1d95aca7243dba, type: 3}
+  m_Name: Nael
+  m_EditorClassIdentifier: 
+  characterName: Nael
+  description: Cowo
+  characterSprite: {fileID: 21300000, guid: 1a558fed3382c984d9ce2b928f8bee45, type: 3}
+  characterPrefab: {fileID: 2525508192242068157, guid: 10c1138a4a19a0e44b957a1abd8375ac, type: 3}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185688b47ec08c74ba1d95aca7243dba, type: 3}
+  m_Name: Naya
+  m_EditorClassIdentifier: 
+  characterName: Naya
+  description: Cewe Loli
+  characterSprite: {fileID: 21300000, guid: 29a3f56b24210df408ba0c436bde4e63, type: 3}
+  characterPrefab: {fileID: 5735728397834105643, guid: cbac97a9fe86fb44899ad3739a0df9ca, type: 3}
