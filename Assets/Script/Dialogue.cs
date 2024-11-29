@@ -6,25 +6,22 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
-    
-
     public TextMeshProUGUI textComponent;
-    public TextMeshProUGUI nameComponent; // Tambahkan untuk menampilkan nama karakter
+    public TextMeshProUGUI nameComponent; // Untuk menampilkan nama karakter
 
     public string[] lines;
     public string[] characterNames; // Array untuk nama karakter
-
     public float textSpeed;
     private int index;
+
+    public string nextSceneName; // Nama scene tujuan
 
     void Start()
     {
         nameComponent.text = string.Empty; // Reset nama karakter
-
         textComponent.text = string.Empty;
         StartDialogue();
     }
-
 
     void Update()
     {
@@ -66,7 +63,11 @@ public class Dialogue : MonoBehaviour
             textComponent.text = string.Empty;
             DisplayCharacterName(); // Update nama karakter
             StartCoroutine(typeline());
-        }   
+        }
+        else
+        {
+            EndDialogue();
+        }
     }
 
     void DisplayCharacterName()
@@ -78,6 +79,24 @@ public class Dialogue : MonoBehaviour
         else
         {
             nameComponent.text = string.Empty;
+        }
+    }
+
+    void EndDialogue()
+    {
+        Debug.Log("Dialogue Finished!");
+        ChangeScene(); // Pindah ke scene berikutnya
+    }
+
+    void ChangeScene()
+    {
+        if (!string.IsNullOrEmpty(nextSceneName))
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            Debug.LogError("Next scene name is not set!");
         }
     }
 }

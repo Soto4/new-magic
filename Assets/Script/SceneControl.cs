@@ -6,14 +6,16 @@ public class SceneControl : MonoBehaviour
 {
     public GameObject fadeOutEffect;   // Objek efek Fade Out
     public TextMeshProUGUI textOpening;
-    public float letterDelay = 0.04f;  // Waktu jeda antar huruf
-    public GameObject charAria;        // Karakter Aria
-    public GameObject charNaya;        // Karakter Naya
+    public GameObject panelOpening;   // Panel untuk teks opening
+    public float letterDelay = 0.04f; // Waktu jeda antar huruf
+    public GameObject charAria;       // Karakter Aria
+    public GameObject charNaya;       // Karakter Naya
     public GameObject dialogueManager; // Dialog Manager
 
     private bool isTextFinished = false; // Menandai apakah teks sudah selesai
     private bool skipText = false;       // Menandai klik untuk melewati animasi teks
     private bool isTextActive = false;   // Menandai apakah teks opening sedang aktif
+    private bool textHidden = false;     // Menandai apakah teks dan panel sudah disembunyikan
 
     void Start()
     {
@@ -31,17 +33,16 @@ public class SceneControl : MonoBehaviour
         }
 
         // 2. Text Opening muncul per kata
-        if (textOpening != null)
+        if (textOpening != null && panelOpening != null)
         {
+            panelOpening.SetActive(true);  // Tampilkan panel opening
             isTextActive = true;
             yield return ShowTextOneByOne(textOpening, 
                 "10 Tahun Kemudian.... Terdapat seorang pengembara yang memiliki kemampuan sihir sedang berjalan mencari sebuah desa terdekat. Aria menuju desa Elmwood untuk dijadikan tempat untuk ia menetap dan beristirahat. Namun sesampainya di gerbang desa Elmwood.....");
         }
 
-        // Tunggu hingga klik berikutnya untuk melanjutkan
-        yield return WaitForNextClick();
-        textOpening.gameObject.SetActive(false); // Hilangkan teks opening
-        isTextActive = false;
+        // Tunggu hingga klik berikutnya untuk menyembunyikan teks dan panel
+        yield return new WaitUntil(() => textHidden);
 
         // 3. Aktifkan karakter
         charAria.SetActive(true);
@@ -75,28 +76,22 @@ public class SceneControl : MonoBehaviour
         skipText = false;      // Reset status skip
     }
 
-    IEnumerator WaitForNextClick()
-    {
-        // Tunggu hingga pengguna menekan tombol mouse atau keyboard
-        while (!Input.GetMouseButtonDown(0) && !Input.anyKeyDown)
-        {
-            yield return null; // Tunggu satu frame
-        }
-    }
-
     void Update()
     {
         // Deteksi input saat teks opening aktif
-        if (isTextActive && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)))
+        if (isTextActive && Input.GetMouseButtonDown(0))
         {
             if (!isTextFinished)
             {
                 skipText = true; // Langsung tampilkan seluruh teks
             }
-            else
+            else if (!textHidden)
             {
-                textOpening.gameObject.SetActive(false); // Sembunyikan teks
+                // Sembunyikan teks dan panel saat klik berikutnya
+                textOpening.gameObject.SetActive(false);
+                panelOpening.SetActive(false);
                 isTextActive = false;
+                textHidden = true;
             }
         }
     }
