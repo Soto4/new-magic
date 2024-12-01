@@ -16,6 +16,13 @@ public class SceneControl : MonoBehaviour
     private bool skipText = false;       // Menandai klik untuk melewati animasi teks
     private bool isTextActive = false;   // Menandai apakah teks opening sedang aktif
     private bool textHidden = false;     // Menandai apakah teks dan panel sudah disembunyikan
+    private int currentSegment = 0;      // Menandai segmen teks yang sedang aktif
+
+    private string[] openingSegments = new string[] // Teks dibagi menjadi beberapa segmen
+    {
+        "10 Tahun Kemudian.... Terdapat seorang pengembara yang memiliki kemampuan sihir sedang berjalan mencari sebuah desa terdekat.",
+        "Aria menuju desa Elmwood untuk dijadikan tempat untuk ia menetap dan beristirahat. Namun sesampainya di gerbang desa Elmwood....."
+    };
 
     void Start()
     {
@@ -32,17 +39,20 @@ public class SceneControl : MonoBehaviour
             fadeOutEffect.SetActive(false); // Nonaktifkan efek
         }
 
-        // 2. Text Opening muncul per kata
+        // 2. Tampilkan teks opening berdasarkan segmen
         if (textOpening != null && panelOpening != null)
         {
             panelOpening.SetActive(true);  // Tampilkan panel opening
             isTextActive = true;
-            yield return ShowTextOneByOne(textOpening, 
-                "10 Tahun Kemudian.... Terdapat seorang pengembara yang memiliki kemampuan sihir sedang berjalan mencari sebuah desa terdekat. Aria menuju desa Elmwood untuk dijadikan tempat untuk ia menetap dan beristirahat. Namun sesampainya di gerbang desa Elmwood.....");
-        }
 
-        // Tunggu hingga klik berikutnya untuk menyembunyikan teks dan panel
-        yield return new WaitUntil(() => textHidden);
+            while (currentSegment < openingSegments.Length)
+            {
+                yield return ShowTextOneByOne(textOpening, openingSegments[currentSegment]);
+                yield return new WaitUntil(() => textHidden); // Tunggu hingga klik untuk segmen berikutnya
+                textHidden = false; // Reset untuk segmen berikutnya
+                currentSegment++;   // Pindah ke segmen berikutnya
+            }
+        }
 
         // 3. Aktifkan karakter
         charAria.SetActive(true);
@@ -87,11 +97,14 @@ public class SceneControl : MonoBehaviour
             }
             else if (!textHidden)
             {
-                // Sembunyikan teks dan panel saat klik berikutnya
-                textOpening.gameObject.SetActive(false);
-                panelOpening.SetActive(false);
-                isTextActive = false;
-                textHidden = true;
+                textHidden = true; // Tandai untuk menampilkan segmen berikutnya
+                if (currentSegment >= openingSegments.Length - 1)
+                {
+                    // Jika segmen terakhir, sembunyikan teks dan panel
+                    textOpening.gameObject.SetActive(false);
+                    panelOpening.SetActive(false);
+                    isTextActive = false;
+                }
             }
         }
     }

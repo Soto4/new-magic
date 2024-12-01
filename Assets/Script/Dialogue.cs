@@ -6,19 +6,25 @@ using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
-    public TextMeshProUGUI textComponent;
-    public TextMeshProUGUI nameComponent; // Untuk menampilkan nama karakter
+    [System.Serializable]
+    public struct DialogueLine
+    {
+        public string characterName; // Nama karakter
+        [TextArea(2, 5)] public string dialogueText; // Teks dialog
+    }
 
-    public string[] lines;
-    public string[] characterNames; // Array untuk nama karakter
+    public TextMeshProUGUI textComponent;
+    public TextMeshProUGUI nameComponent;
+
+    public DialogueLine[] dialogues; // Array dialog berbasis Struct
     public float textSpeed;
     private int index;
 
-    public string nextSceneName; // Nama scene tujuan
+    public string nextSceneName;
 
     void Start()
     {
-        nameComponent.text = string.Empty; // Reset nama karakter
+        nameComponent.text = string.Empty;
         textComponent.text = string.Empty;
         StartDialogue();
     }
@@ -27,14 +33,14 @@ public class Dialogue : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (textComponent.text == lines[index])
+            if (textComponent.text == dialogues[index].dialogueText)
             {
                 NextLine();
             }
             else
             {
                 StopAllCoroutines();
-                textComponent.text = lines[index];
+                textComponent.text = dialogues[index].dialogueText;
             }
         }
     }
@@ -42,13 +48,12 @@ public class Dialogue : MonoBehaviour
     void StartDialogue()
     {
         index = 0;
-        DisplayCharacterName();
-        StartCoroutine(typeline());
+        DisplayDialogue();
     }
 
     IEnumerator typeline()
     {
-        foreach (char c in lines[index].ToCharArray())
+        foreach (char c in dialogues[index].dialogueText.ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
@@ -57,12 +62,11 @@ public class Dialogue : MonoBehaviour
 
     void NextLine()
     {
-        if (index < lines.Length - 1)
+        if (index < dialogues.Length - 1)
         {
             index++;
             textComponent.text = string.Empty;
-            DisplayCharacterName(); // Update nama karakter
-            StartCoroutine(typeline());
+            DisplayDialogue();
         }
         else
         {
@@ -70,22 +74,16 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void DisplayCharacterName()
+    void DisplayDialogue()
     {
-        if (index < characterNames.Length)
-        {
-            nameComponent.text = characterNames[index];
-        }
-        else
-        {
-            nameComponent.text = string.Empty;
-        }
+        nameComponent.text = dialogues[index].characterName; // Tampilkan nama
+        StartCoroutine(typeline());
     }
 
     void EndDialogue()
     {
         Debug.Log("Dialogue Finished!");
-        ChangeScene(); // Pindah ke scene berikutnya
+        ChangeScene();
     }
 
     void ChangeScene()
