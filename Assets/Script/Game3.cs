@@ -23,7 +23,10 @@ public class GameController7 : MonoBehaviour
     private float remainingTime;
     public Text timerText; // UI Text untuk waktu
     public GameObject gameOverPanel; // Panel untuk Game Over
-    public GameObject successPanel; // Panel untuk Success
+    public GameObject successPanel; // Panel untuk Sukses
+
+    // Card count
+    public int totalPairs = 8; // Total pasangan kartu yang dapat diubah di Inspector
 
     void Awake()
     {
@@ -39,7 +42,9 @@ public class GameController7 : MonoBehaviour
         AddListener();
         AddGamePuzzle();
         Shuffle(gamePuzzles);
-        gameGuesses = gamePuzzles.Count / 2;
+        gameGuesses = totalPairs;
+
+        UpdateTimerUI();
     }
 
     void Update()
@@ -63,27 +68,39 @@ public class GameController7 : MonoBehaviour
     void GetButtons()
     {
         GameObject[] objects = GameObject.FindGameObjectsWithTag("PuzzleButton");
-        for (int i = 0; i < objects.Length; i++)
+
+        // Hapus tombol jika jumlahnya melebihi kebutuhan
+        if (objects.Length > totalPairs * 2)
         {
-            btns.Add(objects[i].GetComponent<Button>());
-            btns[i].image.sprite = bgImage;
-            btns[i].name = i.ToString(); // Tetapkan nama sesuai indeks
+            for (int i = totalPairs * 2; i < objects.Length; i++)
+            {
+                Destroy(objects[i]);
+            }
+        }
+
+        // Tambahkan tombol jika kurang
+        for (int i = 0; i < totalPairs * 2 - objects.Length; i++)
+        {
+            GameObject newButton = Instantiate(objects[0], objects[0].transform.parent);
+            newButton.name = (objects.Length + i).ToString();
+        }
+
+        btns.Clear();
+        objects = GameObject.FindGameObjectsWithTag("PuzzleButton");
+        foreach (GameObject obj in objects)
+        {
+            btns.Add(obj.GetComponent<Button>());
+            obj.GetComponent<Button>().image.sprite = bgImage;
         }
     }
 
     void AddGamePuzzle()
     {
-        int looper = btns.Count;
-        int index = 0;
-
-        for (int i = 0; i < looper; i++)
+        gamePuzzles.Clear();
+        for (int i = 0; i < totalPairs; i++)
         {
-            if (index == looper / 2)
-            {
-                index = 0;
-            }
-            gamePuzzles.Add(puzzles[index]);
-            index++;
+            gamePuzzles.Add(puzzles[i]);
+            gamePuzzles.Add(puzzles[i]); // Tambahkan duplikat untuk pasangan
         }
     }
 
@@ -97,34 +114,23 @@ public class GameController7 : MonoBehaviour
 
     public void PickAPuzzle()
     {
-        // Mendapatkan nama tombol yang diklik
-        string name = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject?.name;
+        int buttonIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
 
-        if (string.IsNullOrEmpty(name))
-        {
-            Debug.LogError("Selected GameObject's name is null or empty!");
-            return;
-        }
+        if (!btns[buttonIndex].interactable) return;
 
-        if (!int.TryParse(name, out int selectedIndex) || selectedIndex < 0 || selectedIndex >= btns.Count)
-        {
-            Debug.LogError($"Invalid index parsed from GameObject's name: {name}");
-            return;
-        }
+        btns[buttonIndex].image.sprite = gamePuzzles[buttonIndex];
 
         if (!firstGuess)
         {
             firstGuess = true;
-            firstGuessIndex = selectedIndex;
+            firstGuessIndex = buttonIndex;
             firstGuesspuzzle = gamePuzzles[firstGuessIndex].name;
-            btns[firstGuessIndex].image.sprite = gamePuzzles[firstGuessIndex];
         }
-        else if (!secondGuess)
+        else
         {
             secondGuess = true;
-            secondGuessIndex = selectedIndex;
+            secondGuessIndex = buttonIndex;
             secondGuessPuzzle = gamePuzzles[secondGuessIndex].name;
-            btns[secondGuessIndex].image.sprite = gamePuzzles[secondGuessIndex];
             countGuesses++;
             StartCoroutine(CheckIfThePuzzlesMatch());
         }
@@ -132,22 +138,24 @@ public class GameController7 : MonoBehaviour
 
     IEnumerator CheckIfThePuzzlesMatch()
     {
+        yield return new WaitForSeconds(1f);
         if (firstGuesspuzzle == secondGuessPuzzle)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(.5f);
             btns[firstGuessIndex].interactable = false;
             btns[secondGuessIndex].interactable = false;
 
             btns[firstGuessIndex].image.color = new Color(0, 0, 0, 0);
             btns[secondGuessIndex].image.color = new Color(0, 0, 0, 0);
+
             CheckIfTheGameIsFinish();
         }
         else
         {
-            yield return new WaitForSeconds(0.5f);
             btns[firstGuessIndex].image.sprite = bgImage;
             btns[secondGuessIndex].image.sprite = bgImage;
         }
+
         firstGuess = secondGuess = false;
     }
 
@@ -158,9 +166,8 @@ public class GameController7 : MonoBehaviour
         {
             if (remainingTime > 0)
             {
-                successPanel.SetActive(true);
                 Debug.Log("You Won!");
-                Debug.Log("It Took You " + countGuesses + " guesses to finish the game!");
+                successPanel.SetActive(true); // Menampilkan panel sukses
             }
         }
     }
