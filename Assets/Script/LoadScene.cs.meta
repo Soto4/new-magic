@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 290397ddac58a5a4681decad0ac8ae41
+=======
+guid: b186665f1d2f4e543a30a9eb5ca81dae
+>>>>>>> menu,cutscene,gameplay
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
