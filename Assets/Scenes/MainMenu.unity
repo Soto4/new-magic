@@ -353,12 +353,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747ffee70c7f86943aa4cd3b54e51570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 377927050}
-  pressed: {fileID: -2141902437, guid: 24bec1c7ffdead6468733edcb5b212d1, type: 3}
-  unPressed: {fileID: 1508170958, guid: 24bec1c7ffdead6468733edcb5b212d1, type: 3}
-  audioPressed: {fileID: 8300000, guid: 0d7681230f35618439aad1d2e8b0c134, type: 3}
-  audioUnPressed: {fileID: 0}
-  source: {fileID: 377927052}
+  _image: {fileID: 0}
+  _pressed: {fileID: -170630479, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
+  _unPressed: {fileID: -1027135417, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
+  _audioPressed: {fileID: 8300000, guid: f52ea1599948b4c4b999999ab6e28b97, type: 3}
+  _audioUnPressed: {fileID: 0}
+  _source: {fileID: 377927052}
 --- !u!1 &385246722
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,7 +511,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2126299934}
+      - m_Target: {fileID: 2126299936}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
         m_MethodName: LoadSceneByName
         m_Mode: 5
@@ -669,12 +669,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747ffee70c7f86943aa4cd3b54e51570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 431589076}
-  pressed: {fileID: 2005150021, guid: 432b01c818c0eee408942a86561b7f8b, type: 3}
-  unPressed: {fileID: -805824726, guid: 432b01c818c0eee408942a86561b7f8b, type: 3}
-  audioPressed: {fileID: 8300000, guid: 0d7681230f35618439aad1d2e8b0c134, type: 3}
-  audioUnPressed: {fileID: 0}
-  source: {fileID: 431589078}
+  _image: {fileID: 431589076}
+  _pressed: {fileID: 524198390, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
+  _unPressed: {fileID: 573971344, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
+  _audioPressed: {fileID: 8300000, guid: f52ea1599948b4c4b999999ab6e28b97, type: 3}
+  _audioUnPressed: {fileID: 0}
+  _source: {fileID: 431589078}
 --- !u!1 &449174419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,12 +1225,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747ffee70c7f86943aa4cd3b54e51570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 834457163}
-  pressed: {fileID: -550398069, guid: 432b01c818c0eee408942a86561b7f8b, type: 3}
-  unPressed: {fileID: -1344112398, guid: 432b01c818c0eee408942a86561b7f8b, type: 3}
-  audioPressed: {fileID: 8300000, guid: 0d7681230f35618439aad1d2e8b0c134, type: 3}
-  audioUnPressed: {fileID: 0}
-  source: {fileID: 834457165}
+  _image: {fileID: 834457163}
+  _pressed: {fileID: 2044562062, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
+  _unPressed: {fileID: -248591983, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
+  _audioPressed: {fileID: 8300000, guid: f52ea1599948b4c4b999999ab6e28b97, type: 3}
+  _audioUnPressed: {fileID: 0}
+  _source: {fileID: 834457165}
 --- !u!1 &930970189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,7 +1420,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2126299934}
+      - m_Target: {fileID: 2126299936}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
         m_MethodName: LoadSceneByName
         m_Mode: 5
@@ -1578,12 +1578,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747ffee70c7f86943aa4cd3b54e51570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 1124531396}
-  pressed: {fileID: 7744632, guid: 432b01c818c0eee408942a86561b7f8b, type: 3}
-  unPressed: {fileID: 671254057, guid: 432b01c818c0eee408942a86561b7f8b, type: 3}
-  audioPressed: {fileID: 8300000, guid: 0d7681230f35618439aad1d2e8b0c134, type: 3}
-  audioUnPressed: {fileID: 0}
-  source: {fileID: 1124531398}
+  _image: {fileID: 1124531396}
+  _pressed: {fileID: -985488271, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
+  _unPressed: {fileID: -445703295, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
+  _audioPressed: {fileID: 8300000, guid: f52ea1599948b4c4b999999ab6e28b97, type: 3}
+  _audioUnPressed: {fileID: 0}
+  _source: {fileID: 1124531398}
 --- !u!1 &1156121227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1973,6 +1973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2126299935}
   - component: {fileID: 2126299934}
+  - component: {fileID: 2126299936}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -2007,6 +2008,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2126299936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126299933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290397ddac58a5a4681decad0ac8ae41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
