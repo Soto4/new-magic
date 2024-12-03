@@ -1672,140 +1672,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 652961721}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &554727674
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 554727675}
-  - component: {fileID: 554727677}
-  - component: {fileID: 554727676}
-  m_Layer: 5
-  m_Name: Opening
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &554727675
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554727674}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 729866938}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.066908, y: -371.97665}
-  m_SizeDelta: {x: 1765.4474, y: 270.8471}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &554727676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554727674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cd72443398076fc4fa0b97e6171fe7a2, type: 2}
-  m_sharedMaterial: {fileID: 7397263474384278884, guid: cd72443398076fc4fa0b97e6171fe7a2, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 0.28930807, g: 0.11554124, b: 0.11554124, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 8
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 2
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -16.141052, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &554727677
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554727674}
-  m_CullTransparentMesh: 1
 --- !u!1 &567312420
 GameObject:
   m_ObjectHideFlags: 0
@@ -2076,8 +1942,6 @@ RectTransform:
   - {fileID: 1371048026}
   - {fileID: 1099669694}
   - {fileID: 1669251976}
-  - {fileID: 1440475542}
-  - {fileID: 554727675}
   - {fileID: 296496248}
   - {fileID: 1118866824}
   - {fileID: 875037434}
@@ -2472,7 +2336,7 @@ GameObject:
   - component: {fileID: 898345623}
   - component: {fileID: 898345626}
   - component: {fileID: 898345625}
-  - component: {fileID: 898345624}
+  - component: {fileID: 898345627}
   m_Layer: 5
   m_Name: Naya
   m_TagString: Untagged
@@ -2499,27 +2363,6 @@ RectTransform:
   m_AnchoredPosition: {x: 366.24, y: 499}
   m_SizeDelta: {x: 732.4792, y: 1297.8577}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &898345624
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898345622}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 00b39cf87aac1e645a44854cc2504f9a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &898345625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2555,6 +2398,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898345622}
   m_CullTransparentMesh: 1
+--- !u!95 &898345627
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898345622}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cffccc5837641ba46a6c2cdf44baaf66, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &915685434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2992,32 +2856,37 @@ MonoBehaviour:
   nameComponent: {fileID: 1268149856}
   dialogues:
   - characterName: Naya
-    dialogueText: "Losiee\u2026.."
-  - characterName: Naya
-    dialogueText: Losie... Dimana kamu...
+    dialogueText: Ibuu aku pulaang...
+  - characterName: Ibu Naya
+    dialogueText: Selamat datang Naya.. mengapa lama sekali, lalu siapa kakak ini?
   - characterName: Aria
-    dialogueText: Halo adik kecil.. Apa kamu sedang mencari sesuatu??
+    dialogueText: Perkenalkan saya Aria, saya adalah penyihir pengembara yang ingin
+      menetap dan beristirahat selama beberapa hari di desa ini.
   - characterName: Naya
-    dialogueText: Ah.. Aku sedang mencari Losie.
-  - characterName: Aria
-    dialogueText: Losie??
-  - characterName: Aria
-    dialogueText: Apa dia bagian dari keluarga mu??
+    dialogueText: Ibu apa boleh kak Aria menetap dan beristirahat disini selama beberapa
+      hari?
+  - characterName: Ibu Naya
+    dialogueText: Tentu saja, nona Aria boleh menetap dan beristirahat di rumah kita.
   - characterName: Naya
-    dialogueText: Losie itu nama kucing ku, dan sekarang dia hilang entah pergi kemana.
-  - characterName: Naya
-    dialogueText: Apa kakak ingin membantu ku untuk mencari Losie??
+    dialogueText: Horeee.
   - characterName: Aria
-    dialogueText: ummm baiklah, aku akan membantu mu.
-  - characterName: Aria
-    dialogueText: seperti apa ciri ciri yang dimiliki losie?
+    dialogueText: Terima kasih Ibu Naya sudah membolehkan saya untuk menetap di rumah
+      anda selama beberapa hari kedepan.
+  - characterName: Maeva
+    dialogueText: 'Tidak masalah, aku Maeva. panggil saja jika nona Aria membutuhkan
+      sesuatu. '
+  - characterName: Maeva
+    dialogueText: Kebetulan sekali hasil panen sayuran di ladang kita sedang bagus,
+      kalo begitu mari kita makan malam bersama.
   - characterName: Naya
-    dialogueText: Losie memiliki bulu berwarna putih dan tubuhnya tidak terlalu besar,
-      di lehernya terdapat kalung berwarna merah bertuliskan namanya.
-  - characterName: Aria
-    dialogueText: Baiklah kalau begitu ayo kita cari Losie!
+    dialogueText: Asyiik, ayoo kita makann!!
   - characterName: Naya
-    dialogueText: Ayoo!!
+    dialogueText: Ibu, apa ayah akan ikut makan malam bersama kita hari ini?
+  - characterName: Maeva
+    dialogueText: Sepertinya tidak, ayah bilang masih ada sesuatu yang harus di bicarakan
+      dengan kepala desa. Mungkin ia akan pulang setelah kita selesai makan malam.
+  - characterName: Naya
+    dialogueText: Baiklah bu, kalau begitu mari kita makann!!
   textSpeed: 0.05
   nextSceneName: MainMenu
 --- !u!114 &1099669692
@@ -3778,6 +3647,7 @@ GameObject:
   - component: {fileID: 1371048026}
   - component: {fileID: 1371048028}
   - component: {fileID: 1371048027}
+  - component: {fileID: 1371048029}
   m_Layer: 5
   m_Name: Maeva
   m_TagString: Untagged
@@ -3839,6 +3709,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371048025}
   m_CullTransparentMesh: 1
+--- !u!95 &1371048029
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371048025}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c2a766c396d3b964da2f7dea985730d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1419287643
 GameObject:
   m_ObjectHideFlags: 0
@@ -3951,81 +3842,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1440475541
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1440475542}
-  - component: {fileID: 1440475544}
-  - component: {fileID: 1440475543}
-  m_Layer: 5
-  m_Name: Panel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1440475542
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1440475541}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 729866938}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 961.72, y: 167.15}
-  m_SizeDelta: {x: 1871.9, y: 311.81}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1440475543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1440475541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 1460375335, guid: 2fb97d04dcfb16c4fa42322e8f63d817, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1440475544
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1440475541}
-  m_CullTransparentMesh: 1
 --- !u!1 &1463131202
 GameObject:
   m_ObjectHideFlags: 0
@@ -5005,13 +4821,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeOutEffect: {fileID: 1118866823}
-  textOpening: {fileID: 554727676}
-  panelOpening: {fileID: 1440475541}
+  textOpening: {fileID: 0}
+  panelOpening: {fileID: 0}
   letterDelay: 0.04
   charAria: {fileID: 203428140}
   charNaya: {fileID: 898345622}
   charEldran: {fileID: 635535413}
-  charMaeva: {fileID: 0}
+  charMaeva: {fileID: 1371048025}
   dialogueManager: {fileID: 1099669690}
 --- !u!4 &1784367846
 Transform:
