@@ -10,7 +10,7 @@ public class SceneControl2 : MonoBehaviour
     public float letterDelay = 0.04f; // Waktu jeda antar huruf
     public GameObject charAria;       // Karakter Aria
     public GameObject charNaya;       // Karakter Naya
-    public GameObject charEldran;     // Karakter Eldran
+    public GameObject charSanto;     // Karakter Santo
     public GameObject charMaeva;     // Karakter Maeva
     public GameObject dialogueManager; // Dialog Manager
 
@@ -61,10 +61,10 @@ public class SceneControl2 : MonoBehaviour
         yield return new WaitForSeconds(0);
         charNaya.SetActive(true);
         yield return new WaitForSeconds(0);
-        charEldran.SetActive(true);
-        yield return new WaitForSeconds(0);
         charMaeva.SetActive(true);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
+        charSanto.SetActive(true);
+        yield return new WaitForSeconds(1);
 
         // 4. Mulai Dialog
         ActivateObject(dialogueManager, true);
