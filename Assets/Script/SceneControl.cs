@@ -10,7 +10,8 @@ public class SceneControl : MonoBehaviour
     public float letterDelay = 0.04f; // Waktu jeda antar huruf
     public GameObject charAria;       // Karakter Aria
     public GameObject charNaya;       // Karakter Naya
-    public GameObject charEldran;
+    public GameObject charEldran;     // Karakter Eldran
+    public GameObject charMaeva;     // Karakter Maeva
     public GameObject dialogueManager; // Dialog Manager
 
     private bool isTextFinished = false; // Menandai apakah teks sudah selesai
@@ -57,11 +58,13 @@ public class SceneControl : MonoBehaviour
 
         // 3. Aktifkan karakter
         charAria.SetActive(true);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0);
         charNaya.SetActive(true);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0);
         charEldran.SetActive(true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0);
+        charMaeva.SetActive(true);
+        yield return new WaitForSeconds(2);
 
         // 4. Mulai Dialog
         ActivateObject(dialogueManager, true);
