@@ -830,52 +830,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508992311}
   m_CullTransparentMesh: 1
---- !u!1 &524028202
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 524028204}
-  - component: {fileID: 524028203}
-  m_Layer: 0
-  m_Name: SoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &524028203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524028202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd0171f852a7bbf4ab0d9c935110400d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicSlider: {fileID: 645740405}
-  sfxSlider: {fileID: 1326906643}
---- !u!4 &524028204
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524028202}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1104.3009, y: 527.25726, z: -3.3252995}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &554624258
 GameObject:
   m_ObjectHideFlags: 0
@@ -3178,7 +3132,7 @@ MonoBehaviour:
   _unPressed: {fileID: 2129876462, guid: 949150ca1ff902d4692118b01df503aa, type: 3}
   _audioPressed: {fileID: 8300000, guid: f52ea1599948b4c4b999999ab6e28b97, type: 3}
   _audioUnPressed: {fileID: 0}
-  _source: {fileID: 0}
+  _source: {fileID: 1829594233}
 --- !u!1 &1997918061
 GameObject:
   m_ObjectHideFlags: 0
@@ -3475,5 +3429,4 @@ SceneRoots:
   - {fileID: 219945624}
   - {fileID: 1582703665}
   - {fileID: 1748118906}
-  - {fileID: 524028204}
   - {fileID: 1774976824}

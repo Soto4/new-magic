@@ -1852,6 +1852,7 @@ GameObject:
   - component: {fileID: 1501238894}
   - component: {fileID: 1501238895}
   - component: {fileID: 1501238896}
+  - component: {fileID: 1501238897}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1930,6 +1931,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settingsPopup: {fileID: 2097603427}
+--- !u!114 &1501238897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501238891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c45db1671eb4c4fa76a05ba6eb8535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1580122162
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,6 +2482,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorPopUp
       objectReference: {fileID: 0}
+    - target: {fileID: 8993754945875785093, guid: 493b6c6295da8014780f982069f63626, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2482,6 +2499,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 475659548}
     m_Modifications:
+    - target: {fileID: 1683954721890658307, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1501238897}
     - target: {fileID: 2715883076158950117, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -2590,6 +2611,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8555931931525935564, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1501238897}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
