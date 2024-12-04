@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameController : MonoBehaviour
+public class GameController4 : MonoBehaviour
 {
     [SerializeField]
     private Sprite bgImage;
@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
 
         UpdateTimerUI();
         UpdateClickCounterUI();
-    }
+    Audio.Instance.PlayMusic("Minigame");}
 
     void Update()
     {
@@ -188,7 +188,7 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("You Won!");
                 successPanel.SetActive(true); // Menampilkan panel sukses
-            }
+             Audio.Instance.PlaySFX("Win");}
         }
     }
 
@@ -196,7 +196,7 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("Game Over!");
         gameOverPanel.SetActive(true);
-    }
+    Audio.Instance.PlaySFX("Lose");}
 
     void Shuffle(List<Sprite> list)
     {

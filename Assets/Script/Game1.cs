@@ -36,6 +36,7 @@ public class GameController1 : MonoBehaviour
         gameGuesses = gamePuzzles.Count / 2;
         popupPanel.SetActive(false);
         isChecking = false; // Pastikan pengecekan tidak aktif di awal
+        Audio.Instance.PlayMusic("Minigame");
     }
 
     void GetButtons()
@@ -141,6 +142,9 @@ public class GameController1 : MonoBehaviour
     void ShowPopup()
     {
         popupPanel.SetActive(true);
+        Audio.Instance.musicSource.Stop();
+        Audio.Instance.PlaySFX("Win");
+        
     }
 
     void Shuffle(List<Sprite> list)

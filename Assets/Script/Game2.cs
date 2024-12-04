@@ -41,7 +41,7 @@ public class GameController2 : MonoBehaviour
         UpdateRemainingClicks();
         gameOverPopup.SetActive(false);
         successPopup.SetActive(false);
-    }
+    Audio.Instance.PlayMusic("Minigame");}
 
     void GetButtons()
     {
@@ -123,7 +123,7 @@ public class GameController2 : MonoBehaviour
             btn.interactable = false; // Nonaktifkan semua tombol
         }
         gameOverPopup.SetActive(true); // Tampilkan popup Game Over
-    }
+     Audio.Instance.PlaySFX("Lose");}
 
     private void Success()
     {
@@ -132,7 +132,7 @@ public class GameController2 : MonoBehaviour
             btn.interactable = false; // Nonaktifkan semua tombol
         }
         successPopup.SetActive(true); // Tampilkan popup Success
-    }
+    Audio.Instance.PlaySFX("Win"); }
 
     IEnumerator CheckIfThePuzzlesMatch()
     {

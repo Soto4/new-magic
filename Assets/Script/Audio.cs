@@ -1,7 +1,9 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Audio : MonoBehaviour
 {
@@ -23,7 +25,7 @@ public class Audio : MonoBehaviour
 
     private void Start()
         {
-        PlayMusic("Theme");
+        PlayMusic("Gameplay");
         }
     
 
@@ -53,5 +55,23 @@ public class Audio : MonoBehaviour
         {
             sfxSource.PlayOneShot(s.clip);
         }
+        
+    }
+    public void ToggleMusic()
+    {
+        musicSource.mute = !musicSource.mute;
+    }
+
+     public void ToggleSFX()
+    {
+        sfxSource.mute = !sfxSource.mute;
+    }
+    public void MusicVolume (float volume)
+    {
+        musicSource.volume = volume;
+    }
+    public void SFXVolume (float volume)
+    {
+        sfxSource.volume = volume;
     }
 }
