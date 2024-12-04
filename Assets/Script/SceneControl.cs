@@ -22,8 +22,9 @@ public class SceneControl : MonoBehaviour
 
     private string[] openingSegments = new string[] // Teks dibagi menjadi beberapa segmen
     {
-        "10 Tahun Kemudian.... Terdapat seorang pengembara yang memiliki kemampuan sihir sedang berjalan mencari sebuah desa terdekat.",
-        "Aria menuju desa Elmwood untuk dijadikan tempat untuk ia menetap dan beristirahat. Namun sesampainya di gerbang desa Elmwood....."
+        "Terdapat seorang penyihir pengembara yang sedang berjalan mencari sebuah desa terdekat.",
+        "Penyihir pengembara tersebut bernama Aria, Aria menuju desa Elmwood untuk dijadikan tempat untuk ia menetap dan berisitirahat.",
+        "Namun sesampainya di gerbang desa Elmwood, ia bertemu seorang anak kecil yang kelihatannya sedang mencari sesuatu."
     };
 
     void Start()
