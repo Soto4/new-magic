@@ -1116,7 +1116,7 @@ MonoBehaviour:
   - characterName: Naya
     dialogueText: Ayoo!!
   textSpeed: 0.05
-  nextSceneName: MainMenu
+  nextSceneName: MasukDesa(2)
 --- !u!114 &329257678
 MonoBehaviour:
   m_ObjectHideFlags: 0
