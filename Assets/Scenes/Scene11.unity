@@ -740,7 +740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &309836584
 RectTransform:
   m_ObjectHideFlags: 0
@@ -768,7 +768,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309836583}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 82e9f74881667714dabdca1988b332fb, type: 2}
   m_CullingMode: 0
@@ -827,6 +827,7 @@ GameObject:
   - component: {fileID: 320924576}
   - component: {fileID: 320924579}
   - component: {fileID: 320924578}
+  - component: {fileID: 320924580}
   m_Layer: 5
   m_Name: Aria
   m_TagString: Untagged
@@ -850,7 +851,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 365, y: 361}
+  m_AnchoredPosition: {x: -425, y: 403}
   m_SizeDelta: {x: 805, y: 1296.4222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &320924578
@@ -888,6 +889,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320924575}
   m_CullTransparentMesh: 1
+--- !u!95 &320924580
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 320924575}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c532c2186dafac4c8a5ec44fe21e19d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &371443948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1740,7 +1762,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866641495}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 82e9f74881667714dabdca1988b332fb, type: 2}
   m_CullingMode: 0
@@ -2091,7 +2113,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &961073049
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2668,7 +2690,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 601b93a67ba19564da19565d909b3d1f, type: 3}
+  m_Texture: {fileID: 2800000, guid: 3dd9886a0787a8d48961d97fd8873566, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2694,13 +2716,14 @@ GameObject:
   - component: {fileID: 1338025313}
   - component: {fileID: 1338025316}
   - component: {fileID: 1338025315}
+  - component: {fileID: 1338025317}
   m_Layer: 5
   m_Name: Naya
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1338025313
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2717,7 +2740,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1074, y: 499}
+  m_AnchoredPosition: {x: -2286.2, y: 520}
   m_SizeDelta: {x: 732.4792, y: 1297.8577}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1338025315
@@ -2727,7 +2750,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338025312}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
@@ -2755,6 +2778,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338025312}
   m_CullTransparentMesh: 1
+--- !u!95 &1338025317
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338025312}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0e39ff038a2131045bf670f38d255ecf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1380262334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2970,71 +3014,122 @@ MonoBehaviour:
   nameComponent: {fileID: 1781619517}
   dialogues:
   - characterName: 
-    dialogueText: 'Aria dan Naya bergegas pergi meninggalkan peternakan. Mereka menuju
-      tempat warga desa biasanya membeli peralatan untuk berkebun.
+    dialogueText: 'Saat dalam perjalanan berkeliling desa, Aria melihat seseorang
+      yang sedang berada di pertengahan ladang jagung. Karena penasaran Aria langsung
+      menghampiri pemuda yang sedang berada di ladang jagung.
 
 '
-  - characterName: Naya
-    dialogueText: 'Nah ini merupakan toko tempat semua warga desa membeli peralatan
-      untuk berkebun. Toko ini milik nyonya Elly, dia sangat ramah dan baik sekali.
-
-'
-  - characterName: Elly
-    dialogueText: 'Halo, ada yang bisa aku bantu?
-
-'
-  - characterName: Naya
-    dialogueText: 'Halo nyonya Elly
-
-'
-  - characterName: Ely
-    dialogueText: 'Naya? apa yang sedang kamu lakukan disini? apa kamu ingin membeli
-      sesuatu?
-
-'
-  - characterName: Naya
-    dialogueText: 'Ah tidak nyonya, aku hanya mengajak kak Aria berkeliling untuk
-      berkenalan dengan warga desa Elmwood.
-
-'
-  - characterName: Elly
-    dialogueText: Aria?, ah orang yang berada di sebelah mu ini yaa. Halo, aku Elly
-      senang bertemu denganmu.
+  - characterName: 
+    dialogueText: Karena penasaran Aria langsung menghampiri pemuda yang sedang berada
+      di ladang jagung.
   - characterName: Aria
-    dialogueText: Helo nyonya Elly, senang bertemu denganmu.
-  - characterName: Elly
-    dialogueText: 'Apa kamu pendatang baru di desa ini?
+    dialogueText: ' Haloo! Selamat sore pak. Apa yang sedang bapak lakukan di ladang
+      jagung ini
+
+'
+  - characterName: Wren
+    dialogueText: 'Ya, selamat sore. aku hanya sedang menebari pupuk pada tanaman
+      jagung, ada perlu apa datang ke sini?
 
 '
   - characterName: Aria
-    dialogueText: 'Aku hanya singgah di desa ini untuk beberapa hari kedepan lalu
-      melanjutkan perjalanan ku. Ngomong ngomong apa nyonya menjual peralatan sihir
-      juga?
+    dialogueText: 'Tidak ada, saya hanya berkeliling untuk menyapa warga desa Elmwood. '
+  - characterName: Aria
+    dialogueText: 'Nama saya Aria, saya merupakan penyihir pengembara yang datang
+      ke desa ini untuk beristirahat selama beberapa hari. Ladang bapak sangat luas,
+      yaa!!
 
 '
-  - characterName: Elly
-    dialogueText: Peralatan sihir? apa kamu seorang penyihir?
-  - characterName: Aria
-    dialogueText: 'ya aku adalah seoarang penyihir pengembara yang selalu pergi ke
-      beberapa tempat.
-
-'
-  - characterName: Elly
-    dialogueText: Lalu apa kekuatan sihirmu? apa kamu bisa melakukan sihir yang dapat
-      membantu warga warga di desa ini? semoga saja sihirmu tidak membawa petaka
-      untuk desa ini seperti 10 tahun lalu.
-  - characterName: Aria
-    dialogueText: Mungkin aku bisa membantu walaupun sedikit, karena aku sendiri
-      pun masih belum tau apa kekuatan sihir ku
-  - characterName: Elly
-    dialogueText: 'Lalu bagaimana kamu membuktikan bahwa kamu adalah seorang penyihir?
+  - characterName: Wren
+    dialogueText: ' Aku Wren dan aku bukanlah bapak bapak, aku belum menikah dan
+      umurku masih muda.
 
 '
   - characterName: Aria
-    dialogueText: 'Ahh, aku bisa membuat benda benda disekitarku melayang dengan
-      tongkat sihir yang berada di tanganku.
+    dialogueText: ' ah maaf Wren aku tidak tahu
 
 '
+  - characterName: Wren
+    dialogueText: ' Tidak apa apa.
+
+'
+  - characterName: 
+    dialogueText: 'Aria tersenyum sambil memandangi suasana di tempat tersebut
+
+'
+  - characterName: Wren
+    dialogueText: ' Ada apa?
+
+'
+  - characterName: Aria
+    dialogueText: Tidak, aku hanya suka dengan suasana di desa ini desa ini terlihat
+      menarik jadi aku ingin mengenal desa ini lebih baik,
+  - characterName: Aria
+    dialogueText: 'walaupun waktuku untuk berisitirahat di desa ini tidak terlalu
+      lama. Bahkan orang orang yang sudah ku temui pun semuanya bersikap baik.
+
+'
+  - characterName: Wren
+    dialogueText: 'Hmm, ya aku setuju dengan perkataanmu. Desa ini memang memiliki
+      suasana yang menarik. '
+  - characterName: Wren
+    dialogueText: 'Lalu siapa saja yang sudah kamu temui di desa ini?
+
+'
+  - characterName: Aria
+    dialogueText: 'Naya, Tuan Eldran, Tuan Santo, Nyonya Maeva, Nyonya Elly, Nael,
+      dan kamu untuk saat ini.
+
+'
+  - characterName: Wren
+    dialogueText: Sepertinya kamu sudah lumayan bertemu banyak warga.
+  - characterName: Aria
+    dialogueText: 'Yaa begitulah, tidak terasa sekali.. apa mungkin karena aku yang
+      terlalu bersemangat yaa '
+  - characterName: Wren
+    dialogueText: Apa setelah ini kamu ingin bertemu lebih banyak warga desa Elmwood?
+  - characterName: Aria
+    dialogueText: 'Sepertinya untuk hari ini cukup, aku akan berkeliling desa ini
+      lagi di lain hari. '
+  - characterName: Aria
+    dialogueText: Ummm apa ada yang bisa aku bantu Wren?.
+  - characterName: wren
+    dialogueText: 'Terserah, kalau mau kamu bisa mengambil pupuk yang berada di belakangku '
+  - characterName: Aria
+    dialogueText: lalu taruh pupuk tersebut ke pohon jagung yang belum aku beri pupuk.
+  - characterName: Aria
+    dialogueText: Baiklaah kalau begitu biar aku bantu yaa!!
+  - characterName: 
+    dialogueText: 'Aria akhirnya membantu Wren untuk menebar pupuk serta menyiram
+      tanaman jagung yang sudah diberi pupuk.
+
+'
+  - characterName: Aria
+    dialogueText: 'Sudah selesaii. Hufftt cukup melelahkan tetapi aku sangat senang
+      bisa membantumu.
+
+'
+  - characterName: Wren
+    dialogueText: 'Ya, terima kasih sudah bantu.
+
+'
+  - characterName: Aria
+    dialogueText: "Karena waktu sudah hampir larut malam sepertinya aku ingin pulang
+      ke rumah nyonya Maeva dan Tuan Santo untuk beristirahat. \r\n"
+  - characterName: Aria
+    dialogueText: 'Apa masih ada yang perlu aku bantu?
+
+'
+  - characterName: Wren
+    dialogueText: 'Tidak perlu. Pulanglah, hari sudah hampir malam.
+
+'
+  - characterName: Aria
+    dialogueText: 'Baiklah kalau begitu aku duluan ya Wren! Sampai jumpa.
+
+'
+  - characterName: Aria
+    dialogueText: Ya, berhati hati lah diperjalanan
   textSpeed: 0.05
   nextSceneName: MainMenu
 --- !u!114 &1417476920
@@ -3218,6 +3313,7 @@ RectTransform:
   - {fileID: 1338025313}
   - {fileID: 866641496}
   - {fileID: 961073049}
+  - {fileID: 1889619532}
   - {fileID: 309836584}
   - {fileID: 190738118}
   - {fileID: 1417476918}
@@ -4589,6 +4685,100 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781619515}
+  m_CullTransparentMesh: 1
+--- !u!1 &1889619531
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1889619532}
+  - component: {fileID: 1889619535}
+  - component: {fileID: 1889619534}
+  - component: {fileID: 1889619533}
+  m_Layer: 5
+  m_Name: Wren
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1889619532
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889619531}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1475761992}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1129, y: -108.93}
+  m_SizeDelta: {x: 805, y: 1297.858}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1889619533
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889619531}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 82e9f74881667714dabdca1988b332fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1889619534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889619531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 8559e0cb4eb00dd478a4d8745ca96784, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1889619535
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889619531}
   m_CullTransparentMesh: 1
 --- !u!1 &1911219199
 GameObject:
