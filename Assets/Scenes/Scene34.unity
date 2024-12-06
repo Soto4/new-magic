@@ -468,7 +468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 687, y: 357.56}
+  m_AnchoredPosition: {x: 402.5, y: 357.56}
   m_SizeDelta: {x: 805, y: 1296.4222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &203428143
@@ -926,7 +926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &294472495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -943,7 +943,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -792, y: -181.72}
+  m_AnchoredPosition: {x: -1410, y: -181.72}
   m_SizeDelta: {x: 805, y: 1297.858}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &294472497
@@ -953,7 +953,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294472494}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
@@ -2533,7 +2533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &898345623
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2560,7 +2560,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898345622}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
@@ -2596,7 +2596,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898345622}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: cffccc5837641ba46a6c2cdf44baaf66, type: 2}
   m_CullingMode: 0
@@ -3046,65 +3046,62 @@ MonoBehaviour:
   nameComponent: {fileID: 1268149856}
   dialogues:
   - characterName: 
-    dialogueText: 'Nael membawa Aria masuk ke ruang kamar tempat tidurnya dan dengan
-      hati-hati membaringkannya di kasur.
+    dialogueText: 'Keesokan Harinya.
 
 '
-  - characterName: Nael
-    dialogueText: 'Aku tidak seharusnya memintanya membantu kalau aku tahu kondisinya
-      sudah seperti ini. '
-  - characterName: Nael
-    dialogueText: Tapi dia... Dia tetap bersikeras menolong
-  - characterName: Maeva
-    dialogueText: Itulah Aria. Dia selalu memprioritaskan orang lain, meskipun itu
-      berarti mengorbankan dirinya sendiri.
-  - characterName: Maeva
-    dialogueText: Tapi dia membutuhkan istirahat total sekarang. Terima kasih ya,
-      Nael. Sudah bergegas membawa Aria ke sini.
-  - characterName: Nael
-    dialogueText: 'Tidak masalah Nyonya Maeva, aku sangat khawatir dengan keadaannya
-      sekarang.
-
-'
-  - characterName: Maeva
-    dialogueText: 'Untuk sekarang kamu pergi saja, aku yang akan menemani Aria sampai
-      ia bangun.
-
-'
-  - characterName: Nael
-    dialogueText: Baiklah, Nyonya Maeva. Jika terjadi sesuatu pada Aria, kamu bisa
-      memanggilku kapanpun, Nyonya Maeva.
-  - characterName: Maeva
-    dialogueText: 'Maeva : Baiklah.
-
-'
-  - characterName: Naya
-    dialogueText: Asyiik, ayoo kita makann!!
-  - characterName: Naya
-    dialogueText: Ibu, apa ayah akan ikut makan malam bersama kita hari ini?
-  - characterName: Maeva
-    dialogueText: Sepertinya tidak, ayah bilang masih ada sesuatu yang harus di bicarakan
-      dengan kepala desa. Mungkin ia akan pulang setelah kita selesai makan malam.
-  - characterName: Naya
-    dialogueText: Baiklah bu, kalau begitu mari kita makann!!
   - characterName: 
-    dialogueText: Setelah makan malam
-  - characterName: Aria
-    dialogueText: 'Terima kasih atas makan malamnya nyonya Maeva.
+    dialogueText: Pagi hari, sinar matahari lembut masuk melalui celah-celah jendela.
+      Aria perlahan membuka matanya, merasa tubuhnya lebih baik
+  - characterName: 
+    dialogueText: 'Di samping tempat tidur, Naya duduk dengan senyum lega saat melihat
+      Aria terbangun.
 
 '
-  - characterName: Maeva
-    dialogueText: Sama sama. Untuk beristirahat kamu bisa gunakan kamar yang berada
-      di sebelah kamar Naya untuk beristirahat.
-  - characterName: Aria
-    dialogueText: 'Baik nyonya Maeva. Ummm nyonya maeva, siapa nama suami anda? dan
-      apa yang sedang ia  kerjakan sampai malam hari?
+  - characterName: Naya
+    dialogueText: 'Kak Aria!. Bagaimana perasaanmu sekarang? apa sudah lebih baik?
 
 '
-  - characterName: Maeva
-    dialogueText: 'Namanya adalah santo, dia bekerja sebagai asisten kepala desa,
-      mungkin saat ini dia sedang menjelaskan beberapa laporan yang telah dibuatnya
-      kepada kepala desa.
+  - characterName: Aria
+    dialogueText: Aku sudah berasa lebih baik sekarang, terima kasih Naya.
+  - characterName: Aria
+    dialogueText: 'Tapi.. sudah berapa lama kamu menungguku? dan dimana Nyonya Maeva?
+
+'
+  - characterName: Naya
+    dialogueText: " Umm.. mungkin sekitar satu jam lebih aku berada di samping mu.
+      \r\n"
+  - characterName: Naya
+    dialogueText: Ibu dan Ayah, mereka sedang berada di balai desa. Mereka berkumpul
+      dengan para warga lainnya
+  - characterName: Naya
+    dialogueText: Ibu dan Ayah, mereka sedang berada di balai desa. Mereka berkumpul
+      dengan para warga lainnya
+  - characterName: Aria
+    dialogueText: 'Mereka membahas kejadian yang sudah menimpa desa ini selama dua
+      hari yang lalu.
+
+'
+  - characterName: Aria
+    dialogueText: Berkumpul di Balai Desa untuk membahas kejadian dua hari lalu?
+      sepertinya aku ingin menyusul kesana,
+  - characterName: Aria
+    dialogueText: 'ada pertanyaan yang ingin aku tanyakan mengenai kejadian desa
+      ini 10 tahun yang lalu.
+
+'
+  - characterName: Naya
+    dialogueText: "Tapi.. Kak Aria baru saja pulih, apa benar tidak apa apa?\r"
+  - characterName: Aria
+    dialogueText: "Tenang saja Naya, badanku sudah membaik sekarang. Kalau begitu
+      aku pergi dulu ya.\r"
+  - characterName: Naya
+    dialogueText: 'Berhati hatilah, Kak Aria.
+
+'
+  - characterName: 
+    dialogueText: 'Aria akhirnya pergi menuju Balai Desa untuk membahas kejadian
+      yang menimpa desa Elmwood dua hari yang lalu, dan ia juga ingin menanyakan
+      kejadian sepuluh tahun yang lalu pada desa ini.
 
 '
   textSpeed: 0.05
@@ -3874,7 +3871,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1371048026
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3891,7 +3888,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 605, y: -108.21}
+  m_AnchoredPosition: {x: 1500, y: -108.21}
   m_SizeDelta: {x: 805, y: 1296.422}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1371048027
@@ -3901,7 +3898,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371048025}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 

@@ -468,7 +468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 687, y: 357.56}
+  m_AnchoredPosition: {x: 402.5, y: 357.56}
   m_SizeDelta: {x: 805, y: 1296.4222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &203428143
@@ -926,7 +926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &294472495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -943,7 +943,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -792, y: -181.72}
+  m_AnchoredPosition: {x: -1410, y: -181.72}
   m_SizeDelta: {x: 805, y: 1297.858}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &294472497
@@ -953,7 +953,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294472494}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
@@ -3046,65 +3046,79 @@ MonoBehaviour:
   nameComponent: {fileID: 1268149856}
   dialogues:
   - characterName: 
-    dialogueText: 'Nael membawa Aria masuk ke ruang kamar tempat tidurnya dan dengan
-      hati-hati membaringkannya di kasur.
+    dialogueText: Setelah hampir 10 jam, Aria mulai bergerak pelan di atas tempat
+      tidurnya. Matanya perlahan terbuka,
+  - characterName: Nael
+    dialogueText: 'dan ia melihat Nyonya Maeva duduk di kursi dekatnya dengan tenang,
+      memegang secangkir teh hangat
 
 '
-  - characterName: Nael
-    dialogueText: 'Aku tidak seharusnya memintanya membantu kalau aku tahu kondisinya
-      sudah seperti ini. '
-  - characterName: Nael
-    dialogueText: Tapi dia... Dia tetap bersikeras menolong
-  - characterName: Maeva
-    dialogueText: Itulah Aria. Dia selalu memprioritaskan orang lain, meskipun itu
-      berarti mengorbankan dirinya sendiri.
-  - characterName: Maeva
-    dialogueText: Tapi dia membutuhkan istirahat total sekarang. Terima kasih ya,
-      Nael. Sudah bergegas membawa Aria ke sini.
-  - characterName: Nael
-    dialogueText: 'Tidak masalah Nyonya Maeva, aku sangat khawatir dengan keadaannya
-      sekarang.
+  - characterName: Aria
+    dialogueText: 'Nyonya Maeva...? Di mana ini?
 
 '
   - characterName: Maeva
-    dialogueText: 'Untuk sekarang kamu pergi saja, aku yang akan menemani Aria sampai
-      ia bangun.
+    dialogueText: 'Akhirnya kamu bangun, Aria. Kamu berada di kamarmu. Nael membawamu
+      ke sini setelah kau pingsan di peternakannya.
 
 '
-  - characterName: Nael
-    dialogueText: Baiklah, Nyonya Maeva. Jika terjadi sesuatu pada Aria, kamu bisa
-      memanggilku kapanpun, Nyonya Maeva.
+  - characterName: Aria
+    dialogueText: 'Ah, Nael... Hewan-hewannya... Apa mereka baik-baik saja?
+
+'
   - characterName: Maeva
-    dialogueText: 'Maeva : Baiklah.
+    dialogueText: 'Tenanglah, semuanya sudah baik-baik saja. Kamu berhasil menyelamatkan
+      mereka, tapi kondisimu sendiri hampir membuat kami khawatir setengah mati.
 
 '
-  - characterName: Naya
-    dialogueText: Asyiik, ayoo kita makann!!
+  - characterName: Aria
+    dialogueText: 'Maaf sudah merepotkan. Aku hanya ingin membantu. Aku tidak menyangka
+      akan berakhir seperti ini.
+
+'
+  - characterName: Maeva
+    dialogueText: 'Aria, kamu harus lebih memikirkan dirimu sendiri. Menggunakan
+      sihir sebesar itu dalam keadaan lelah sangat berbahaya.
+
+'
+  - characterName: Aria
+    dialogueText: 'Aku mengerti, Nyonya Maeva. Tapi saat itu, aku tidak bisa hanya
+      diam melihat mereka dalam keadaan seperti itu. '
+  - characterName: Aria
+    dialogueText: ' Rasanya seperti kewajibanku untuk membantu.
+
+'
   - characterName: Naya
     dialogueText: Ibu, apa ayah akan ikut makan malam bersama kita hari ini?
   - characterName: Maeva
-    dialogueText: Sepertinya tidak, ayah bilang masih ada sesuatu yang harus di bicarakan
-      dengan kepala desa. Mungkin ia akan pulang setelah kita selesai makan malam.
-  - characterName: Naya
-    dialogueText: Baiklah bu, kalau begitu mari kita makann!!
+    dialogueText: Aku memahami niatmu, Aria. Kamu memiliki hati yang besar, dan itu
+      adalah sifat yang luar biasa. Tapi kamu juga harus belajar menjaga keseimbangan
+  - characterName: Maeva
+    dialogueText: 'Kalau kamu terus seperti ini, tubuhmu mungkin tidak akan selalu
+      mampu bertahan.
+
+'
+  - characterName: Aria
+    dialogueText: 'Aku tidak ingin membuat kalian khawatir. Aku akan lebih berhati-hati
+      ke depannya.
+
+'
+  - characterName: Maeva
+    dialogueText: 'Itulah yang ingin aku dengar. Untuk sekarang fokuslah pada pemulihanmu,
+      tubuhmu masih perlu waktu untuk benar-benar pulih.
+
+'
+  - characterName: Aria
+    dialogueText: 'Baiklah, Nyonya Maeva. Terima kasih.
+
+'
+  - characterName: Maeva
+    dialogueText: 'Tidak masalah.
+
+'
   - characterName: 
-    dialogueText: Setelah makan malam
-  - characterName: Aria
-    dialogueText: 'Terima kasih atas makan malamnya nyonya Maeva.
-
-'
-  - characterName: Maeva
-    dialogueText: Sama sama. Untuk beristirahat kamu bisa gunakan kamar yang berada
-      di sebelah kamar Naya untuk beristirahat.
-  - characterName: Aria
-    dialogueText: 'Baik nyonya Maeva. Ummm nyonya maeva, siapa nama suami anda? dan
-      apa yang sedang ia  kerjakan sampai malam hari?
-
-'
-  - characterName: Maeva
-    dialogueText: 'Namanya adalah santo, dia bekerja sebagai asisten kepala desa,
-      mungkin saat ini dia sedang menjelaskan beberapa laporan yang telah dibuatnya
-      kepada kepala desa.
+    dialogueText: 'Aria perlahan terlelap kembali, Nyonya Maeva tetap duduk di dekatnya,
+      memastikan ia benar-benar nyaman  untuk beristirahat..
 
 '
   textSpeed: 0.05
@@ -3891,7 +3905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 605, y: -108.21}
+  m_AnchoredPosition: {x: 712, y: -108.21}
   m_SizeDelta: {x: 805, y: 1296.422}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1371048027
