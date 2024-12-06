@@ -8,25 +8,24 @@ using UnityEngine.SceneManagement;
 
 public class ClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField] private Image image;
-    [SerializeField] private Sprite pressed, unPressed;
-    [SerializeField] private AudioClip audioPressed, audioUnPressed;
-    [SerializeField] private AudioSource source;
+    [SerializeField] private Image _image;
+    [SerializeField] private Sprite _pressed, _unPressed;
+    [SerializeField] private AudioClip _audioPressed, _audioUnPressed;
+    [SerializeField] private AudioSource _source;
     public void OnPointerDown(PointerEventData eventData)
     {
-        image.sprite = pressed;
-        source.PlayOneShot(audioPressed);
+        _image.sprite = _pressed;
+        _source.PlayOneShot(_audioPressed);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        image.sprite = unPressed;
-        source.PlayOneShot(audioUnPressed);
+        _image.sprite = _unPressed;
+        _source.PlayOneShot(_audioUnPressed);
     }
 
     public void iWasClicked()
     {
-        
 
     }
 }

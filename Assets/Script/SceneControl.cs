@@ -66,6 +66,8 @@ public class SceneControl : MonoBehaviour
         yield return new WaitForSeconds(0);
         charMaeva.SetActive(true);
         yield return new WaitForSeconds(2);
+        charEldran.SetActive(true);
+        yield return new WaitForSeconds(1);
 
         // 4. Mulai Dialog
         ActivateObject(dialogueManager, true);

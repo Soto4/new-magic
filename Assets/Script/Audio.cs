@@ -16,17 +16,24 @@ public class Audio : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else {
+        else
+        {
             Destroy(gameObject);
         }
     }
 
     private void Start()
-        {
-        PlayMusic("Theme");
-        }
-    
+    {
+        // Load saved volume values
+        float savedMusicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f); // Default to 1 (max volume)
+        float savedSFXVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);    // Default to 1 (max volume)
 
+        MusicVolume(savedMusicVolume);
+        SFXVolume(savedSFXVolume);
+
+        // Play default or assigned music
+        PlayMusic("Gameplay");
+    }
 
     public void PlayMusic(string name)
     {
@@ -53,5 +60,27 @@ public class Audio : MonoBehaviour
         {
             sfxSource.PlayOneShot(s.clip);
         }
+    }
+
+    public void ToggleMusic()
+    {
+        musicSource.mute = !musicSource.mute;
+    }
+
+    public void ToggleSFX()
+    {
+        sfxSource.mute = !sfxSource.mute;
+    }
+
+    public void MusicVolume(float volume)
+    {
+        musicSource.volume = volume;
+        PlayerPrefs.SetFloat("MusicVolume", volume); // Save the value
+    }
+
+    public void SFXVolume(float volume)
+    {
+        sfxSource.volume = volume;
+        PlayerPrefs.SetFloat("SFXVolume", volume); // Save the value
     }
 }
