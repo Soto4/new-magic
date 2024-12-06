@@ -45,7 +45,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Mini4C.unity
     guid: fbb6e8695c11d07489018950de0a5130
   - enabled: 1
-    path: Assets/Scenes/Scene01.unity
+    path: Assets/Scenes/Scene17.unity
     guid: e6b8975b0a4340d45b315229239ffda1
   - enabled: 1
     path: Assets/Scenes/SetelahMinigame1.unity
