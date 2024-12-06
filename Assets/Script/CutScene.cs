@@ -1,69 +1,92 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections; // Tambahkan ini untuk mengatur scene
 
-
-public class CutScene : MonoBehaviour
+public class CutsceneController : MonoBehaviour
 {
-    public GameObject fadeOut;
-    public GameObject fadeClose;
-    public GameObject nextButton;
-    public GameObject pict1;
-    public GameObject pict2;
-    public GameObject pict3;
-    public GameObject pict4;
-    public GameObject pict5;
-    public GameObject pict6;
-    public GameObject pict7;
-    public GameObject pict8;    
-    public GameObject pict9;
+    [System.Serializable]
+    public class CutsceneStep
+    {
+        public Sprite image; // Gambar untuk step ini
+        public string text; // Teks untuk step ini
+    }
 
-    // Start is called before the first frame update
+    public Image cutsceneImage; // Referensi ke Image
+    public TextMeshProUGUI cutsceneText; // Referensi ke Text
+    public CutsceneStep[] steps; // Array step cutscene
+    public float typingSpeed = 0.05f; // Kecepatan animasi ketik
+    public string nextSceneName; // Nama scene berikutnya
+
+    private int currentStepIndex = 0; // Indeks step saat ini
+    private bool isTyping = false; // Apakah teks sedang diketik
+    private string fullText; // Teks penuh untuk step saat ini
+
     void Start()
     {
-
-        StartCoroutine(Evenstarter());
+        ShowStep(0); // Tampilkan step pertama
     }
-     void Update()
-    {
 
-        // Deteksi jika ada input keyboard untuk melanjutkan dialog
-        if (Input.anyKeyDown)
+    public void ShowStep(int index)
+    {
+        if (index >= 0 && index < steps.Length)
         {
-            NextButton();
+            currentStepIndex = index;
+            cutsceneImage.sprite = steps[index].image;
+            fullText = steps[index].text;
+            cutsceneText.text = ""; // Kosongkan teks untuk typing
+            StartCoroutine(TypeText());
         }
     }
 
-    IEnumerator Evenstarter()
+    IEnumerator TypeText()
     {
+        isTyping = true;
+        foreach (char c in fullText)
+        {
+            cutsceneText.text += c;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        isTyping = false;
+    }
 
-        // Event 1
-        fadeOut.SetActive(true);
-        yield return new WaitForSeconds(1);
-        pict1.SetActive(true);
-        yield return new WaitForSeconds(5);
-        pict2.SetActive(true);
-        yield return new WaitForSeconds(5);
-        pict3.SetActive(true);
-        yield return new WaitForSeconds(5);
-        pict4.SetActive(true);
-        yield return new WaitForSeconds(5);
-        pict5.SetActive(true);
-        yield return new WaitForSeconds(5);
-        pict6.SetActive(true);
-        yield return new WaitForSeconds(5);
-        pict7.SetActive(true);
-        yield return new WaitForSeconds(5);
-        pict8.SetActive(true);
-        yield return new WaitForSeconds(5);
-        pict9.SetActive(true);
-        yield return new WaitForSeconds(7);
-        fadeClose.SetActive(true);
-        nextButton.SetActive(true);
-}
-    public void NextButton()
+    void Update()
     {
-          SceneManager.LoadScene("Scene01");
+        if (Input.GetMouseButtonDown(0)) // Klik kiri mouse
+        {
+            if (isTyping)
+            {
+                // Skip typing dan tampilkan teks penuh
+                StopAllCoroutines();
+                cutsceneText.text = fullText;
+                isTyping = false;
+            }
+            else
+            {
+                // Lanjut ke step berikutnya
+                int nextStep = currentStepIndex + 1;
+                if (nextStep < steps.Length)
+                {
+                    ShowStep(nextStep);
+                }
+                else
+                {
+                    LoadNextScene(); // Load scene berikutnya jika step selesai
+                }
+            }
+        }
+    }
+
+    void LoadNextScene()
+    {
+        if (!string.IsNullOrEmpty(nextSceneName))
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            Debug.LogWarning("Nama scene berikutnya belum diatur!");
+        }
     }
 }

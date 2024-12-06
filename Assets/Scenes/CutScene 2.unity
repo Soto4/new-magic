@@ -1319,7 +1319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aa90a461ae08f5b41827b49817942898, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c938151722241084f8a5a8a78a62c878, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1361,11 +1361,14 @@ MonoBehaviour:
   cutsceneImage: {fileID: 1525758510}
   cutsceneText: {fileID: 936348443}
   steps:
-  - image: {fileID: 21300000, guid: aa90a461ae08f5b41827b49817942898, type: 3}
-    text: Aria menunjukkan kekuatan sihirnya dengan membuat benda benda di sekitar
-      toko milik Elly melayang.
+  - image: {fileID: 21300000, guid: c938151722241084f8a5a8a78a62c878, type: 3}
+    text: Setelah beberapa waktu, Aria berhasil memecahkan kutukan yang melanda hewan-hewan
+      di peternakan Nael
+  - image: {fileID: 21300000, guid: c938151722241084f8a5a8a78a62c878, type: 3}
+    text: 'Hewan-hewan mulai bergerak kembali, tampak sehat dan bebas dari aura gelap.
+      Namun, tubuh Aria gemetar karena kelelahan, dan wajahnya pucat. '
   typingSpeed: 0.05
-  nextSceneName: Scene11
+  nextSceneName: Scene24
 --- !u!4 &1576789267
 Transform:
   m_ObjectHideFlags: 0

@@ -227,7 +227,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1508170958, guid: 24bec1c7ffdead6468733edcb5b212d1, type: 3}
+  m_Sprite: {fileID: -1027135417, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -543,7 +543,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -805824726, guid: 432b01c818c0eee408942a86561b7f8b, type: 3}
+  m_Sprite: {fileID: 573971344, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1099,7 +1099,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1344112398, guid: 432b01c818c0eee408942a86561b7f8b, type: 3}
+  m_Sprite: {fileID: -248591983, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1429,7 +1429,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Mini1A
+          m_StringArgument: Scene01
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1124531396
@@ -1452,7 +1452,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 671254057, guid: 432b01c818c0eee408942a86561b7f8b, type: 3}
+  m_Sprite: {fileID: -445703295, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

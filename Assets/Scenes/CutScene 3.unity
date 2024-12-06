@@ -613,8 +613,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -679,8 +679,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.9843, y: -4.4765}
-  m_SizeDelta: {x: 1698.1248, y: 166.3882}
+  m_AnchoredPosition: {x: -11.8469, y: 7.3884}
+  m_SizeDelta: {x: 1745.5842, y: 196.0504}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1030892222
 GameObject:
@@ -1017,8 +1017,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 961.5627, y: 163.20392}
-  m_SizeDelta: {x: 1777.1255, y: 222.4078}
+  m_AnchoredPosition: {x: 952.5269, y: 151}
+  m_SizeDelta: {x: 1860.1792, y: 252.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378731900
 MonoBehaviour:
@@ -1319,7 +1319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aa90a461ae08f5b41827b49817942898, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8cc54068a38865c43804d61743f4b5b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1361,11 +1361,33 @@ MonoBehaviour:
   cutsceneImage: {fileID: 1525758510}
   cutsceneText: {fileID: 936348443}
   steps:
-  - image: {fileID: 21300000, guid: aa90a461ae08f5b41827b49817942898, type: 3}
-    text: Aria menunjukkan kekuatan sihirnya dengan membuat benda benda di sekitar
-      toko milik Elly melayang.
+  - image: {fileID: 21300000, guid: 8cc54068a38865c43804d61743f4b5b2, type: 3}
+    text: ' Jadi 10 tahun yang lalu di desa Elmwood, seorang anak bernama Dorian
+      telah lahir dengan bakat sihir yang luar biasa'
+  - image: {fileID: 21300000, guid: 08d3c6a791ab920499493b96ac818328, type: 3}
+    text: Sejak kecil, Dorian menarik perhatian para penduduk desa, yang memandangnya
+      sebagai penyelamat masa depan mereka.
+  - image: {fileID: 21300000, guid: 08d3c6a791ab920499493b96ac818328, type: 3}
+    text: 'Mereka percaya, dengan kekuatannya, Dorian akan membawa kemakmuran dan
+      kesejahteraan untuk desa Elmwood. '
+  - image: {fileID: 21300000, guid: 08d3c6a791ab920499493b96ac818328, type: 3}
+    text: Suatu hari, aku meminta bantuan kepada Dorian untuk menggunakan kekuatannya
+      untuk menyuburkan ladang milikku.
+  - image: {fileID: 21300000, guid: 535c345d56715244688238fbe3a30cd5, type: 3}
+    text: Namun, mantranya malah menjadi bumerang. Alih-alih membawa kesuburan,
+  - image: {fileID: 21300000, guid: 535c345d56715244688238fbe3a30cd5, type: 3}
+    text: sihir Dorian menyebabkan ladang milikku diserang oleh hama mematikan yang
+      menghancurkan seluruh tanaman.
+  - image: {fileID: 21300000, guid: fe98055f35d097242bfe3938a0961810, type: 3}
+    text: Warga yang sebelumnya menaruh harapan besar padanya berubah menjadi ketakutan
+  - image: {fileID: 21300000, guid: fe98055f35d097242bfe3938a0961810, type: 3}
+    text: ' Mereka menuduh Dorian sebagai penyebab bencana ini. Dalam amarah dan
+      rasa frustasi, aku akhirnya  mengusir Dorian dari desa. '
+  - image: {fileID: 21300000, guid: 92fbac9ee14850840a84f5697d0174eb, type: 3}
+    text: 'Dan terakhir, sebelum dia pergi, dia bersumpah akan kembali dan menghancurkan
+      desa ini sebagai balas dendam. '
   typingSpeed: 0.05
-  nextSceneName: Scene11
+  nextSceneName: Scene31
 --- !u!4 &1576789267
 Transform:
   m_ObjectHideFlags: 0

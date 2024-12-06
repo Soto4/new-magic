@@ -600,10 +600,10 @@ RectTransform:
   - {fileID: 20538627}
   - {fileID: 467604663}
   - {fileID: 888532612}
-  - {fileID: 1635363601}
   - {fileID: 5473918294307357651}
   - {fileID: 894713164}
   - {fileID: 820548904}
+  - {fileID: 1635363601}
   - {fileID: 2097603430}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1478,7 +1478,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1806127190, guid: 1ec64d72408a30c43902e9c43a6d8f7a, type: 3}
+  m_Sprite: {fileID: 1964314204, guid: bfb9482efbbbc6e45bed1a6b178e2d50, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
