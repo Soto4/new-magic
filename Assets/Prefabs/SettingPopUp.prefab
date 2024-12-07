@@ -592,6 +592,8 @@ GameObject:
   - component: {fileID: 2699230119557684263}
   - component: {fileID: 7494834773359944087}
   - component: {fileID: 6622431831172214193}
+  - component: {fileID: 2274975928023404045}
+  - component: {fileID: 673072115209100336}
   m_Layer: 5
   m_Name: SettingPopUp
   m_TagString: Untagged
@@ -680,6 +682,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicSlider: {fileID: 4655539240824041903}
   _sfxSlider: {fileID: 8839106348078630198}
+--- !u!114 &2274975928023404045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2980748286094700854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c45db1671eb4c4fa76a05ba6eb8535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &673072115209100336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2980748286094700854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2597728de4bef144092d47b73797e456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsPopup: {fileID: 0}
 --- !u!1 &3182603921815726024
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,7 +1018,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2274975928023404045}
         m_TargetAssemblyTypeName: ScreenSettings, Assembly-CSharp
         m_MethodName: SetFullscreen
         m_Mode: 6
@@ -1417,7 +1444,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2274975928023404045}
         m_TargetAssemblyTypeName: ScreenSettings, Assembly-CSharp
         m_MethodName: SetFullscreen
         m_Mode: 6
@@ -2505,7 +2532,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 673072115209100336}
         m_TargetAssemblyTypeName: settingPopup, Assembly-CSharp
         m_MethodName: CloseSettings
         m_Mode: 1

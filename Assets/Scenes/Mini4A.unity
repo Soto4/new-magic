@@ -814,6 +814,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8888559341459497034, guid: 72099865f7dc3364d97a5af1e59e893d, type: 3}
   m_PrefabInstance: {fileID: 877628831}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &877628833 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3964999675534197100, guid: 72099865f7dc3364d97a5af1e59e893d, type: 3}
+  m_PrefabInstance: {fileID: 877628831}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1000331870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,6 +1286,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8079566178908548629, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
   m_PrefabInstance: {fileID: 1511677069}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1511677071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2980748286094700854, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
+  m_PrefabInstance: {fileID: 1511677069}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1532261452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,7 +1469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8188824169063522904, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Mini4C
+      value: Mini4B
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1469,6 +1479,11 @@ PrefabInstance:
 --- !u!224 &1541824187 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1556739623394035961, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
+  m_PrefabInstance: {fileID: 1541824186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1541824188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6103346659514448501, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
   m_PrefabInstance: {fileID: 1541824186}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1572150045
@@ -1707,12 +1722,12 @@ MonoBehaviour:
   puzzles: []
   gamePuzzles: []
   btns: []
-  gameTime: 60
+  gameTime: 120
   timerText: {fileID: 1706476480}
-  gameOverPanel: {fileID: 0}
-  successPanel: {fileID: 0}
+  gameOverPanel: {fileID: 877628833}
+  successPanel: {fileID: 1541824188}
   totalPairs: 6
-  maxClicks: 20
+  maxClicks: 30
   clickCounterText: {fileID: 2073867629}
 --- !u!114 &1714265058
 MonoBehaviour:
@@ -1752,7 +1767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2597728de4bef144092d47b73797e456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsPopup: {fileID: 0}
+  settingsPopup: {fileID: 1511677071}
 --- !u!1 &1875422181
 GameObject:
   m_ObjectHideFlags: 0

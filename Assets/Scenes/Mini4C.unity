@@ -471,6 +471,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2980748286094700854, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
   m_PrefabInstance: {fileID: 156011434}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &222306495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6103346659514448501, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
+  m_PrefabInstance: {fileID: 709059646}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &298075291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,11 +1191,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1556739623394035961, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1920
+      value: 1949.1
       objectReference: {fileID: 0}
     - target: {fileID: 1556739623394035961, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 1009.9625
+      value: 979.05
       objectReference: {fileID: 0}
     - target: {fileID: 1556739623394035961, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1222,11 +1227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1556739623394035961, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0025635
+      value: -14.566
       objectReference: {fileID: 0}
     - target: {fileID: 1556739623394035961, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 12.519
+      value: -2.9362
       objectReference: {fileID: 0}
     - target: {fileID: 1556739623394035961, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1302,7 +1307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6103346659514448501, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6561120739285740753, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1623,6 +1628,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4267712118673814842, guid: c713df759d98d294fa57e3c0d7e9f1da, type: 3}
   m_PrefabInstance: {fileID: 917093296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1342093213 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3964999675534197100, guid: 72099865f7dc3364d97a5af1e59e893d, type: 3}
+  m_PrefabInstance: {fileID: 125459407}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1383050882
 GameObject:
@@ -2009,7 +2019,7 @@ MonoBehaviour:
   m_CellSize: {x: 200, y: 250}
   m_Spacing: {x: 15, y: 15}
   m_Constraint: 1
-  m_ConstraintCount: 4
+  m_ConstraintCount: 6
 --- !u!114 &1468301728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2246,12 +2256,12 @@ MonoBehaviour:
   puzzles: []
   gamePuzzles: []
   btns: []
-  gameTime: 60
+  gameTime: 90
   timerText: {fileID: 1706476480}
-  gameOverPanel: {fileID: 0}
-  successPanel: {fileID: 0}
-  totalPairs: 6
-  maxClicks: 20
+  gameOverPanel: {fileID: 1342093213}
+  successPanel: {fileID: 222306495}
+  totalPairs: 9
+  maxClicks: 35
   clickCounterText: {fileID: 2073867629}
 --- !u!114 &1714265058
 MonoBehaviour:

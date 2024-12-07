@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_CellSize: {x: 268, y: 354}
   m_Spacing: {x: 15, y: 15}
   m_Constraint: 1
-  m_ConstraintCount: 4
+  m_ConstraintCount: 5
 --- !u!114 &1468301728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1636,7 +1636,7 @@ MonoBehaviour:
   timerText: {fileID: 1706476480}
   gameOverPanel: {fileID: 763402497}
   successPanel: {fileID: 1710202517}
-  totalPairs: 4
+  totalPairs: 5
 --- !u!114 &1714265056
 MonoBehaviour:
   m_ObjectHideFlags: 0
