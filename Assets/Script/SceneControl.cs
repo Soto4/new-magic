@@ -65,7 +65,7 @@ public class SceneControl : MonoBehaviour
         charEldran.SetActive(true);
         yield return new WaitForSeconds(0);
         charMaeva.SetActive(true);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         charEldran.SetActive(true);
         yield return new WaitForSeconds(1);
 
