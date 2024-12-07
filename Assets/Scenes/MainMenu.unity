@@ -1859,6 +1859,78 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: c22822c65c65e104e84ddc142681705a, type: 3}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[0].name
+      value: Default
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: c0c10c93dc1c550459f5243565b92b9b, type: 3}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[1].name
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 32e494ecdbb06264f984d13e78d06b1a, type: 3}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[2].name
+      value: Win
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b591de6d2dab02a428eb14529afb4243, type: 3}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[3].name
+      value: MiniA
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d3e72198dd9f7c345b34f1683b2e9772, type: 3}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[4].name
+      value: Ariadorian
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 46fe317bd3261a74d81eb999b339889e, type: 3}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[5].name
+      value: Cutscenedorian
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9cc5f0475c99c6f4282bd597ea877cc2, type: 3}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[6].name
+      value: Balaidesa
+      objectReference: {fileID: 0}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 20d07dfbf2c942444928d4df9ab31e3e, type: 3}
+    - target: {fileID: 3017403719123685778, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: musicSound.Array.data[7].name
+      value: Ladang
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884976676781286304, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8702333405806508905, guid: aeb537a0aa3417f4c90b52bce60567fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 926.6595

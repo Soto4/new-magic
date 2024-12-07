@@ -32,7 +32,7 @@ public class Audio : MonoBehaviour
         SFXVolume(savedSFXVolume);
 
         // Play default or assigned music
-        PlayMusic("Gameplay");
+        PlayMusic("MainMenu");
     }
 
     public void PlayMusic(string name)

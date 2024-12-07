@@ -30,6 +30,7 @@ public class SceneControl : MonoBehaviour
     void Start()
     {
         StartCoroutine(SceneSequence());
+         Audio.Instance.PlayMusic("Default");
     }
 
     IEnumerator SceneSequence()

@@ -26,6 +26,7 @@ public class CutsceneController : MonoBehaviour
     void Start()
     {
         ShowStep(0); // Tampilkan step pertama
+         Audio.Instance.PlayMusic("Cutscenedorian");
     }
 
     public void ShowStep(int index)

@@ -2632,6 +2632,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1501238895}
+    - target: {fileID: 3643673748992391929, guid: 72099865f7dc3364d97a5af1e59e893d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Mini1A
+      objectReference: {fileID: 0}
     - target: {fileID: 3964999675534197100, guid: 72099865f7dc3364d97a5af1e59e893d, type: 3}
       propertyPath: m_Name
       value: GameOverPopUp
@@ -2644,6 +2648,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1501238895}
+    - target: {fileID: 8147194023253848972, guid: 72099865f7dc3364d97a5af1e59e893d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 8888559341459497034, guid: 72099865f7dc3364d97a5af1e59e893d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
