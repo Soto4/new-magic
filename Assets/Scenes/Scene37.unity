@@ -1290,6 +1290,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings
       objectReference: {fileID: 0}
+    - target: {fileID: 3925442784094990230, guid: 746858e299662fa4cabf8a354180180e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1694067588}
+    - target: {fileID: 3925442784094990230, guid: 746858e299662fa4cabf8a354180180e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenSettings
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2180,7 +2188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2597728de4bef144092d47b73797e456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsPopup: {fileID: 0}
+  settingsPopup: {fileID: 1927247674}
 --- !u!114 &1694067589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2380,6 +2388,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
+--- !u!1 &1927247674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2980748286094700854, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
+  m_PrefabInstance: {fileID: 1927247673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2049435929
 GameObject:
   m_ObjectHideFlags: 0

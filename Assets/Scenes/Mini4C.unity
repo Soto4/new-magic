@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9dbf3d26e9a354544b7dcdbcd199ccb3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4636c2b636cc80d45b1f76a35fe53674, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2261,7 +2261,7 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1342093213}
   successPanel: {fileID: 222306495}
   totalPairs: 9
-  maxClicks: 35
+  maxClicks: 40
   clickCounterText: {fileID: 2073867629}
 --- !u!114 &1714265058
 MonoBehaviour:

@@ -1848,7 +1848,7 @@ MonoBehaviour:
     dialogueText: Aku akan berhati-hati, Tuan Santo. Terima kasih atas dukungannya.
       Aku akan menunggu disini sampai malam dan bersiap-siap untuk melawannya.
   textSpeed: 0.05
-  nextSceneName: Scene (5)
+  nextSceneName: Scene37
 --- !u!114 &1518283452
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9dbf3d26e9a354544b7dcdbcd199ccb3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4636c2b636cc80d45b1f76a35fe53674, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -856,6 +856,11 @@ Transform:
   - {fileID: 144528008}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1011539443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3964999675534197100, guid: 72099865f7dc3364d97a5af1e59e893d, type: 3}
+  m_PrefabInstance: {fileID: 1506823426}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1383050882
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,7 +997,7 @@ MonoBehaviour:
   m_CellSize: {x: 200, y: 250}
   m_Spacing: {x: 15, y: 15}
   m_Constraint: 1
-  m_ConstraintCount: 4
+  m_ConstraintCount: 7
 --- !u!114 &1468301728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1237,6 +1242,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1564367567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6103346659514448501, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
+  m_PrefabInstance: {fileID: 299007825}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1565696794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1479,10 +1489,10 @@ MonoBehaviour:
   btns: []
   gameTime: 60
   timerText: {fileID: 1706476480}
-  gameOverPanel: {fileID: 0}
-  successPanel: {fileID: 0}
+  gameOverPanel: {fileID: 1011539443}
+  successPanel: {fileID: 1564367567}
   totalPairs: 7
-  maxClicks: 25
+  maxClicks: 30
   clickCounterText: {fileID: 2073867629}
 --- !u!114 &1714265058
 MonoBehaviour:

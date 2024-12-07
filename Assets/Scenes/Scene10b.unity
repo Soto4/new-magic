@@ -619,7 +619,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1129, y: -108.93}
+  m_AnchoredPosition: {x: 654.74, y: -137}
   m_SizeDelta: {x: 805, y: 1297.858}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &309836585
@@ -630,7 +630,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309836583}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 82e9f74881667714dabdca1988b332fb, type: 2}
   m_CullingMode: 0
@@ -1527,6 +1527,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8079566178908548629, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
   m_PrefabInstance: {fileID: 1228094376}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1228094378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2980748286094700854, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
+  m_PrefabInstance: {fileID: 1228094376}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1231091704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,7 +1753,7 @@ MonoBehaviour:
   - characterName: Aria
     dialogueText: Benarkah, perlukah aku pulang juga?
   - characterName: Naya
-    dialogueText: tida usah, kamu lanjutkan saja perjalanan mu.
+    dialogueText: tidak usah, kamu lanjutkan saja perjalanan mu.
   - characterName: Aria
     dialogueText: Baiklah kalo bagitu. sampai jumpa naya dan nyonya elly
   textSpeed: 0.05
@@ -2474,6 +2479,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings
       objectReference: {fileID: 0}
+    - target: {fileID: 3925442784094990230, guid: 746858e299662fa4cabf8a354180180e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2055285538}
+    - target: {fileID: 3925442784094990230, guid: 746858e299662fa4cabf8a354180180e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenSettings
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2759,7 +2772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2597728de4bef144092d47b73797e456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsPopup: {fileID: 0}
+  settingsPopup: {fileID: 1228094378}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

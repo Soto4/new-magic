@@ -437,6 +437,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings
       objectReference: {fileID: 0}
+    - target: {fileID: 3925442784094990230, guid: 746858e299662fa4cabf8a354180180e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2055285538}
+    - target: {fileID: 3925442784094990230, guid: 746858e299662fa4cabf8a354180180e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenSettings
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -969,7 +977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8079566178908548629, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -9.700989
+      value: -9.700928
       objectReference: {fileID: 0}
     - target: {fileID: 8079566178908548629, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -988,6 +996,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
+--- !u!1 &436087398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2980748286094700854, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
+  m_PrefabInstance: {fileID: 436087397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &454294199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,8 +1267,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 499.9654, y: -168.21}
-  m_SizeDelta: {x: 734.5908, y: 1183}
+  m_AnchoredPosition: {x: 547.31, y: -108.93}
+  m_SizeDelta: {x: 753.6137, y: 1213.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &544099342
 Animator:
@@ -1796,7 +1809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00059512, y: 0.49977}
+  m_AnchoredPosition: {x: -0.00059512, y: 0.49977112}
   m_SizeDelta: {x: 1920, y: 1079}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1231091706
@@ -2926,7 +2939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2597728de4bef144092d47b73797e456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsPopup: {fileID: 0}
+  settingsPopup: {fileID: 436087398}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

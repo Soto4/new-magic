@@ -1001,21 +1001,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1475761992}
     m_Modifications:
-    - target: {fileID: 2715883076158950117, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2980748286094700854, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
       propertyPath: m_Name
       value: SettingPopUp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3557750237804683656, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5190091109938536821, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8079566178908548629, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
       propertyPath: m_Pivot.x
@@ -1095,10 +1083,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8079566178908548629, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8426520294639681366, guid: b9d64aa66298f2b439e3d89012182216, type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1361,6 +1345,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings
       objectReference: {fileID: 0}
+    - target: {fileID: 3925442784094990230, guid: 746858e299662fa4cabf8a354180180e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2055285538}
+    - target: {fileID: 3925442784094990230, guid: 746858e299662fa4cabf8a354180180e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenSettings
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321563981070467684, guid: 746858e299662fa4cabf8a354180180e, type: 3}
+      propertyPath: _audioUnPressed
+      value: 
+      objectReference: {fileID: 8300000, guid: f52ea1599948b4c4b999999ab6e28b97, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
