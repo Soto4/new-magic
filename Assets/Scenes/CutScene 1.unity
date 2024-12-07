@@ -613,8 +613,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1365,7 +1365,7 @@ MonoBehaviour:
     text: Aria menunjukkan kekuatan sihirnya dengan membuat benda benda di sekitar
       toko milik Elly melayang.
   typingSpeed: 0.05
-  nextSceneName: Scene11
+  nextSceneName: Scene10b
 --- !u!4 &1576789267
 Transform:
   m_ObjectHideFlags: 0
