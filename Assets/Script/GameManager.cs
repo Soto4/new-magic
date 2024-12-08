@@ -1,62 +1,87 @@
-using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
-
-    private string saveFilePath;
+    public static GameManager Instance; // Singleton untuk akses global
+    private string lastScene; // Menyimpan nama scene terakhir
 
     private void Awake()
     {
+        // Pastikan GameManager adalah Singleton
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
 
-        saveFilePath = Application.persistentDataPath + "/savefile.json";
-    }
-
-    public void SaveGame(string sceneName)
-    {
-        SaveData data = new SaveData
-        {
-            lastScene = sceneName
-        };
-
-        string json = JsonUtility.ToJson(data);
-        File.WriteAllText(saveFilePath, json);
-        Debug.Log("Game Saved: " + sceneName);
-    }
-
-    public void LoadGame()
-    {
-        if (File.Exists(saveFilePath))
-        {
-            string json = File.ReadAllText(saveFilePath);
-            SaveData data = JsonUtility.FromJson<SaveData>(json);
-
-            if (!string.IsNullOrEmpty(data.lastScene))
+            // Pastikan GameObject adalah root sebelum menggunakan DontDestroyOnLoad
+            if (transform.parent == null)
             {
-                SceneManager.LoadScene(data.lastScene);
-                Debug.Log("Game Loaded: " + data.lastScene);
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Debug.LogWarning("GameManager must be a root GameObject to use DontDestroyOnLoad!");
             }
         }
         else
         {
-            Debug.LogWarning("No save file found!");
+            Destroy(gameObject); // Hanya satu GameManager yang boleh ada
         }
     }
-}
 
-[System.Serializable]
-public class SaveData
-{
-    public string lastScene;
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MainMenu")
+        {
+            UpdateMainMenuButtons();
+        }
+    }
+
+    private void UpdateMainMenuButtons()
+    {
+        Button loadButton = GameObject.Find("LoadButton")?.GetComponent<Button>();
+
+        if (loadButton != null)
+        {
+            loadButton.onClick.RemoveAllListeners();
+            loadButton.onClick.AddListener(LoadGame);
+        }
+        else
+        {
+            Debug.LogWarning("Load button not found in Main Menu!");
+        }
+    }
+
+    public void SaveGame(string currentScene)
+    {
+        lastScene = currentScene;
+        PlayerPrefs.SetString("LastScene", lastScene);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadGame()
+    {
+        if (PlayerPrefs.HasKey("LastScene"))
+        {
+            string sceneToLoad = PlayerPrefs.GetString("LastScene");
+            SceneManager.LoadScene(sceneToLoad);
+        }
+    }
+
+    public void GoToMainMenu()
+    {
+        SaveGame(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("MainMenu");
+    }
 }

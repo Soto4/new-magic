@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,10 +5,10 @@ public class AutoSave : MonoBehaviour
 {
     public void GoToMainMenu()
     {
-        // Simpan nama scene saat ini
+        // Simpan progress game
         GameManager.Instance.SaveGame(SceneManager.GetActiveScene().name);
 
-        // Pindah ke scene Main Menu
+        // Muat ulang Main Menu sepenuhnya
         SceneManager.LoadScene("MainMenu");
     }
 }
