@@ -1343,7 +1343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8188824169063522904, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Pilihan2
+      value: Cutscene 6
       objectReference: {fileID: 0}
     - target: {fileID: 8564547717758636519, guid: eaffc5e857935d4498bee8e93f39c760, type: 3}
       propertyPath: _pressed
@@ -1899,7 +1899,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Pilihan1
+          m_StringArgument: Cutscene 5
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1443342083

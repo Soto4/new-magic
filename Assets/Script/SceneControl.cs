@@ -38,9 +38,8 @@ public class SceneControl : MonoBehaviour
         // 1. Fade Out Effect
         if (fadeOutEffect != null)
         {
-            fadeOutEffect.SetActive(true); // Mengaktifkan efek Fade Out
-            yield return new WaitForSeconds(2f); // Tunggu hingga efek selesai
-            fadeOutEffect.SetActive(false); // Nonaktifkan efek
+           fadeOutEffect.SetActive(true);
+        yield return new WaitForSeconds(0);
         }
 
         // 2. Tampilkan teks opening berdasarkan segmen

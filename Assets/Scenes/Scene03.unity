@@ -1194,7 +1194,7 @@ MonoBehaviour:
   textComponent: {fileID: 516952300}
   nameComponent: {fileID: 815720619}
   dialogues:
-  - characterName: Aria
+  - characterName: Naya
     dialogueText: "Sudah sampai.. Selamat datang di desa Elmwood.\r"
   - characterName: Aria
     dialogueText: "Wahh desanya indah sekali.. \r\n"
@@ -2402,8 +2402,8 @@ RectTransform:
   - {fileID: 2099522990}
   - {fileID: 865735081}
   - {fileID: 425975292}
-  - {fileID: 594108607}
   - {fileID: 1642252245}
+  - {fileID: 594108607}
   - {fileID: 538755130}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

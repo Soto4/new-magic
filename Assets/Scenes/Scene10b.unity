@@ -1745,7 +1745,7 @@ MonoBehaviour:
   - characterName: Ely
     dialogueText: "Baiklah, Sampai jumpa dan berhati hati lah Aria.\r"
   - characterName: Naya
-    dialogueText: Aria, nampaknya kamu harus melanjutkan perjalanan sendirian
+    dialogueText: Kak aria, nampaknya kamu harus melanjutkan perjalanan sendirian
   - characterName: Aria
     dialogueText: Ada apa??
   - characterName: Naya

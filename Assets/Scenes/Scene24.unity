@@ -1773,7 +1773,7 @@ MonoBehaviour:
 
 '
   textSpeed: 0.05
-  nextSceneName: Scene25
+  nextSceneName: Cutscene 4
 --- !u!114 &1417476920
 MonoBehaviour:
   m_ObjectHideFlags: 0

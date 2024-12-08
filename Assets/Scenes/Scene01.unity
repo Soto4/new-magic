@@ -1767,7 +1767,9 @@ MonoBehaviour:
 
 '
   - characterName: Aria
-    dialogueText: ' Ayoo!!'
+    dialogueText: Baiklah kalau begitu ayo kita cari Losie!!!
+  - characterName: Aria
+    dialogueText: Ayoo!!
   textSpeed: 0.05
   nextSceneName: MiniA
 --- !u!114 &1417476920
@@ -1922,8 +1924,8 @@ RectTransform:
   - {fileID: 277799368}
   - {fileID: 1752879048}
   - {fileID: 485154107}
-  - {fileID: 2091160507}
   - {fileID: 454294200}
+  - {fileID: 2091160507}
   - {fileID: 2031236962}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

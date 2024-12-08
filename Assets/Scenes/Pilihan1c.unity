@@ -2422,7 +2422,7 @@ MonoBehaviour:
     dialogueText: Kebencian masa lalu perlahan tergantikan oleh pengampunan, dan
       Aria kembali menjadi simbol harapan dan persatuan bagi mereka semua.
   textSpeed: 0.05
-  nextSceneName: Credit
+  nextSceneName: CutScene 7
 --- !u!114 &1099669692
 MonoBehaviour:
   m_ObjectHideFlags: 0

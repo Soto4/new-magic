@@ -11,7 +11,7 @@ public class GameController3 : MonoBehaviour
     public List<Sprite> gamePuzzles = new List<Sprite>();
     public List<Button> btns = new List<Button>();
 
-    private bool firstGuess, secondGuess;
+    private bool firstGuess, secondGuess, isChecking;
     private int countGuesses;
     private int countCorrectGuesses;
     private int gameGuesses;
@@ -45,7 +45,8 @@ public class GameController3 : MonoBehaviour
         gameGuesses = totalPairs;
 
         UpdateTimerUI();
-    Audio.Instance.PlayMusic("Minigame");}
+        Audio.Instance.PlayMusic("Minigame");
+    }
 
     void Update()
     {
@@ -114,9 +115,12 @@ public class GameController3 : MonoBehaviour
 
     public void PickAPuzzle()
     {
+        if (isChecking) return; // Cegah input saat sedang mengecek kartu
+
         int buttonIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
 
-        if (!btns[buttonIndex].interactable) return;
+        // Pastikan kartu yang sudah dibuka tidak bisa diklik ulang
+        if (!btns[buttonIndex].interactable || btns[buttonIndex].image.sprite != bgImage) return;
 
         btns[buttonIndex].image.sprite = gamePuzzles[buttonIndex];
 
@@ -138,7 +142,9 @@ public class GameController3 : MonoBehaviour
 
     IEnumerator CheckIfThePuzzlesMatch()
     {
+        isChecking = true; // Blokir input selama pengecekan
         yield return new WaitForSeconds(1f);
+
         if (firstGuesspuzzle == secondGuessPuzzle)
         {
             yield return new WaitForSeconds(.5f);
@@ -157,6 +163,7 @@ public class GameController3 : MonoBehaviour
         }
 
         firstGuess = secondGuess = false;
+        isChecking = false; // Izinkan input setelah pengecekan selesai
     }
 
     void CheckIfTheGameIsFinish()
@@ -168,7 +175,8 @@ public class GameController3 : MonoBehaviour
             {
                 Debug.Log("You Won!");
                 successPanel.SetActive(true); // Menampilkan panel sukses
-             Audio.Instance.PlaySFX("Win");}
+                Audio.Instance.PlaySFX("Win");
+            }
         }
     }
 
@@ -176,7 +184,8 @@ public class GameController3 : MonoBehaviour
     {
         Debug.Log("Game Over!");
         gameOverPanel.SetActive(true);
-    Audio.Instance.PlaySFX("Lose");}
+        Audio.Instance.PlaySFX("Lose");
+    }
 
     void Shuffle(List<Sprite> list)
     {

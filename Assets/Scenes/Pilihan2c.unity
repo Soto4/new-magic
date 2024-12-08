@@ -1782,7 +1782,7 @@ MonoBehaviour:
     dialogueText: seolah membawa pergi sisa-sisa dendam yang pernah menyelimuti desa
       Elmwood
   textSpeed: 0.05
-  nextSceneName: MainMenu
+  nextSceneName: Credit
 --- !u!114 &1417476920
 MonoBehaviour:
   m_ObjectHideFlags: 0

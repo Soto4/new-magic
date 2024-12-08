@@ -2292,15 +2292,15 @@ MonoBehaviour:
       Dorian?
 
 '
-  - characterName: eldran
+  - characterName: Eldran
     dialogueText: Aku tidak bisa memastikan. Tetapi melihat kutukan yang terjadi
       pada hewan dipeternakan itu mengingatkanku pada kejadian 10 tahun yang lalu.
-  - characterName: eldran
+  - characterName: Eldran
     dialogueText: 'Jika dia benar-benar kembali untuk membalas dendam, kita harus
       bersiap menghadapi yang terburuk.
 
 '
-  - characterName: aria
+  - characterName: Aria
     dialogueText: 'Jika itu benar-benar Dorian, aku akan melakukan apa pun yang kubisa
       untuk membantu desa ini. Aku tidak akan membiarkannya menghancurkan desa ini.
 
@@ -2317,7 +2317,7 @@ MonoBehaviour:
   - characterName: Elly
     dialogueText: Sepertinya diskusi ini cukup berat, tapi aku ingin mengajak kalian
       untuk pergi ke ladangku.
-  - characterName: elly
+  - characterName: Elly
     dialogueText: 'Setelah semua kejadian ini, mungkin sedikit udara segar di sana
       bisa membantu kita merasa lebih tenang.
 
@@ -2331,7 +2331,7 @@ MonoBehaviour:
       masih perlu ku bahas dengan Santo mengenai kejadian dua hari lalu.
 
 '
-  - characterName: Santp
+  - characterName: Santo
     dialogueText: 'Benar. Masih banyak yang perlu kita selesaikan di sini, terutama
       untuk menentukan langkah selanjutnya. Kalian pergi saja tanpa kami.
 

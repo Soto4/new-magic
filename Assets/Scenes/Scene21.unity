@@ -430,7 +430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 477, y: 317}
+  m_AnchoredPosition: {x: -402.5, y: 357.74}
   m_SizeDelta: {x: 805, y: 1296.4222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &193340106
@@ -441,9 +441,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193340104}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 81791e11758d16444a19d08f84ad7836, type: 2}
+  m_Controller: {fileID: 9100000, guid: 141de18562ad3d44b86860688a531638, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1833,7 +1833,7 @@ GameObject:
   - component: {fileID: 1682853301}
   - component: {fileID: 1682853304}
   - component: {fileID: 1682853303}
-  - component: {fileID: 1682853302}
+  - component: {fileID: 1682853305}
   m_Layer: 5
   m_Name: Nael
   m_TagString: Untagged
@@ -1857,30 +1857,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 666, y: -127.28}
+  m_AnchoredPosition: {x: 1356, y: -128}
   m_SizeDelta: {x: 670.4, y: 1187.9}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1682853302
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682853300}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 09ac08935361fca45b054835e57ede47, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1682853303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1916,6 +1895,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682853300}
   m_CullTransparentMesh: 1
+--- !u!95 &1682853305
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682853300}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7efaa6c1ec064204297f71a3ac8260b7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1713787832
 GameObject:
   m_ObjectHideFlags: 0

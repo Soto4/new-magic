@@ -1592,7 +1592,7 @@ Animator:
   m_GameObject: {fileID: 1404755783}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 81791e11758d16444a19d08f84ad7836, type: 2}
+  m_Controller: {fileID: 9100000, guid: 141de18562ad3d44b86860688a531638, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2000,7 +2000,7 @@ MonoBehaviour:
     dialogueText: "Tapi\u2026. ada sesuatu yang aneh. Saat aku hampir kehabisan tenaga
       untuk memperbaiki beberapa barang"
   - characterName: Aria
-    dialogueText: ', ada sesuatu dalam diriku yang membuatku terus berusaha.'
+    dialogueText: ada sesuatu dalam diriku yang membuatku terus berusaha.
   - characterName: Aria
     dialogueText: Seperti.. dorongan yang tidak bisa dijelaskan. Itu bukan hanya
       semangatku, rasanya lebih dari itu..
@@ -2019,7 +2019,7 @@ MonoBehaviour:
     dialogueText: Suasana menjadi gelap, dan terdengar suara nafas Aria yang perlahan
       tertidur.
   textSpeed: 0.05
-  nextSceneName: Scene20
+  nextSceneName: Scene19b
 --- !u!114 &1761014981
 MonoBehaviour:
   m_ObjectHideFlags: 0

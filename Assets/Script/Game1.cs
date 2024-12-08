@@ -79,7 +79,7 @@ public class GameController1 : MonoBehaviour
 
         int buttonIndex = int.Parse(UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name);
 
-        if (!btns[buttonIndex].interactable) return;
+        if (!btns[buttonIndex].interactable || btns[buttonIndex].image.sprite != bgImage) return;
 
         btns[buttonIndex].image.sprite = gamePuzzles[buttonIndex];
 
@@ -144,7 +144,6 @@ public class GameController1 : MonoBehaviour
         popupPanel.SetActive(true);
         Audio.Instance.musicSource.Stop();
         Audio.Instance.PlaySFX("Win");
-        
     }
 
     void Shuffle(List<Sprite> list)

@@ -1994,8 +1994,8 @@ RectTransform:
   - {fileID: 190738118}
   - {fileID: 1417476918}
   - {fileID: 277799368}
-  - {fileID: 674052704}
   - {fileID: 454294200}
+  - {fileID: 674052704}
   - {fileID: 600292790}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

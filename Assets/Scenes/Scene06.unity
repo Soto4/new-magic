@@ -1616,7 +1616,7 @@ MonoBehaviour:
     dialogueText: 'Tiba-tiba terdengar suara pintu terbuka
 
 '
-  - characterName: santo
+  - characterName: Santo
     dialogueText: Aku pulaang
   - characterName: Maeva
     dialogueText: ' Selamat datang, apa kamu sudah makan malam??'
