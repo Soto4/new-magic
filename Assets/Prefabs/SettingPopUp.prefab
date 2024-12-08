@@ -948,7 +948,6 @@ MonoBehaviour:
   _pressed: {fileID: -724150502, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
   _unPressed: {fileID: -792807969, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
   _audioPressed: {fileID: 8300000, guid: f52ea1599948b4c4b999999ab6e28b97, type: 3}
-  _audioUnPressed: {fileID: 0}
   _source: {fileID: 1845783717271738411}
 --- !u!222 &3907395975340473039
 CanvasRenderer:
@@ -1374,7 +1373,6 @@ MonoBehaviour:
   _pressed: {fileID: -724150502, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
   _unPressed: {fileID: -792807969, guid: 597fa3a99e4295d4e89e701991d6005e, type: 3}
   _audioPressed: {fileID: 8300000, guid: f52ea1599948b4c4b999999ab6e28b97, type: 3}
-  _audioUnPressed: {fileID: 0}
   _source: {fileID: 3713275517529441583}
 --- !u!222 &5152279395056078849
 CanvasRenderer:
@@ -1622,7 +1620,6 @@ MonoBehaviour:
   _pressed: {fileID: 1317212698, guid: 4b5a41ddc1de9584ba1f56598466f45a, type: 3}
   _unPressed: {fileID: 1127676267, guid: 4b5a41ddc1de9584ba1f56598466f45a, type: 3}
   _audioPressed: {fileID: 8300000, guid: f52ea1599948b4c4b999999ab6e28b97, type: 3}
-  _audioUnPressed: {fileID: 0}
   _source: {fileID: 1747273476535731027}
 --- !u!222 &9042260741272374758
 CanvasRenderer:
@@ -1706,10 +1703,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7510644638713243497}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: LoadSceneByName
-        m_Mode: 5
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: BackToMenu, Assembly-CSharp
+        m_MethodName: ReturnToMainMenu
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2710,7 +2707,6 @@ MonoBehaviour:
   _pressed: {fileID: -706903040, guid: 949150ca1ff902d4692118b01df503aa, type: 3}
   _unPressed: {fileID: 2129876462, guid: 949150ca1ff902d4692118b01df503aa, type: 3}
   _audioPressed: {fileID: 8300000, guid: f52ea1599948b4c4b999999ab6e28b97, type: 3}
-  _audioUnPressed: {fileID: 0}
   _source: {fileID: 8052401125587819085}
 --- !u!222 &1128421090161571547
 CanvasRenderer:

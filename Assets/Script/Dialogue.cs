@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour
 {
     [System.Serializable]
     public struct DialogueLine
+    
     {
         public string characterName; // Nama karakter
         [TextArea(2, 5)] public string dialogueText; // Teks dialog
