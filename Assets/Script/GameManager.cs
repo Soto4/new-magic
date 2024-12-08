@@ -48,20 +48,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void UpdateMainMenuButtons()
-    {
-        Button loadButton = GameObject.Find("LoadButton")?.GetComponent<Button>();
+  private void UpdateMainMenuButtons()
+{
+    // Mencari tombol dengan nama "LoadButton"
+    Button loadButton = GameObject.Find("LoadButton")?.GetComponent<Button>();
 
-        if (loadButton != null)
-        {
-            loadButton.onClick.RemoveAllListeners();
-            loadButton.onClick.AddListener(LoadGame);
-        }
-        else
-        {
-            Debug.LogWarning("Load button not found in Main Menu!");
-        }
+    if (loadButton != null)
+    {
+        loadButton.onClick.RemoveAllListeners(); // Hapus listener lama
+        loadButton.onClick.AddListener(LoadGame); // Menghubungkan tombol dengan LoadGame
+        Debug.Log("Load button updated and ready to use.");
     }
+    else
+    {
+        // Jika tombol tidak ditemukan, beri tahu di Console
+        Debug.LogError("Load button not found in Main Menu!");
+    }
+}
+
 
     public void SaveGame(string currentScene)
     {
